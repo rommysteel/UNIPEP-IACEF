@@ -1,0 +1,3843 @@
+﻿ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVEDADES IACEF NACIONAL</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://www.policia.gov.co/sites/default/files/styles/banner_slide_home/public/2025-02/Auxiliar-de-polic%C3%ADa.jpg?itok=f1Lfx8ZQ'); /* Coloca aquí la ruta de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            max-width: 800px;
+            margin: -15px auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        input, select {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+	label {
+            font-weight: bold;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 0;
+			font-size: 40px;
+			color: black;
+			text-shadow: -1px -1px 0 #f8f8f8, 1px -1px 0 #000, -1px 1px 0 #8b8989, 1px 1px 0 #000;	
+			background-color: rgba(255, 255, 255, 0.9); border-radius: 5px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+		.inner-box legend {
+            font-weight: bold;
+            padding: -30px;
+            background: rgba(231, 235, 236, 1.1); /* Color de fondo del título */
+            position: absolute;
+           	margin: -20px 70px;   
+			font-size:large;     
+}
+.inner-box {
+            border: 1px solid #333; /* Borde del recuadro interno */
+            padding: 10px;
+            border-radius: 9px;
+            position: relative;
+            margin-top: 20px;
+}
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+
+    <h1>NOVEDADES IACEF</h1>
+	
+   
+ <form id="operativoForm">
+
+
+	<div class="inner-box">
+	
+<!-- # incidente-->
+        <label for="Nro">Nro. incidente:</label> 
+	<input type="number" id="Nro" name="Nro" required step="1" min="0" placeholder="0001">
+	<style>
+        #Nro {
+            width: 33.8%; 
+			margin: 10px 29px;
+			text-align: center;
+        }
+    </style>
+	<br>
+     
+	
+<!-- # GEPOL  -->
+<label for="Gepol">Nro. Gepol:</label> 
+<input type="text" id="Gepol" name="Gepol" maxlength="20" placeholder="GS-2025-001238-SUDIR">
+<style>
+	#Gepol {
+		width: 33.8%; 
+		margin: 10px 54px;
+		text-align: center;
+	}
+</style>
+<br>
+	
+
+<!-- FECHA ACTUAL -->
+        <label for="fechaActual">Fecha actual:</label>
+        <input type="date" id="fechaActual" name="fechaActual">
+  <style>
+        #fechaActual {
+            width: 33.8%; 
+			margin: 10px 39px;
+			text-align: center;
+        }
+    </style>
+<br>
+	
+<!-- FECHA INCIDENTE -->
+        <label for="fechaIncidente">Fecha incidente:</label>
+        <input type="date" id="fechaIncidente" name="fechaIncidente">
+  <style>
+        #fechaIncidente {
+            width: 33.8%; 
+			margin: 10px 16px;
+			text-align: center;
+        }
+    </style>
+<br>
+
+
+
+<!-- Hora incidente -->
+    <label for="horaIncidente">Hora del incidente:</label>	
+        <input type="time" id="horaIncidente" name="horaIncidente" >
+		 <style> #horaIncidente {
+            width: 33.8%;
+			text-align: center;
+        }
+    	</style>
+</div> <br>
+
+
+		<div class="inner-box">
+		<legend>Lugar Afectación</legend>
+
+<!-- REGIÓN -->
+        <br><br>
+		<label for="region">Región:</label>
+        <select id="region" name="region" onchange="actualizarUnidades()" required>
+            <option value=""></option>
+	    	<option value="REMSA">REMSA</option>
+            <option value="REGIÓN 1">REGIÓN 1</option>
+            <option value="REGIÓN 2">REGIÓN 2</option>
+            <option value="REGIÓN 3">REGIÓN 3</option>
+            <option value="REGIÓN 4">REGIÓN 4</option>
+			<option value="REGIÓN 5">REGIÓN 5</option>
+			<option value="REGIÓN 6">REGIÓN 6</option>
+			<option value="REGIÓN 7">REGIÓN 7</option>
+			<option value="REGIÓN 8">REGIÓN 8</option>	
+			</select><br>
+ 	<style> #region {
+            width: 40%;
+			margin: 10px 115px;
+			text-align: left;
+        }
+    	</style>
+
+<!-- UNIDAD (DEPENDE DE LA REGIÓN)  -->
+        <label for="unidad">Unidad:</label>
+        <select id="unidad" name="unidad" onchange="actualizarDepartamentos()" required>
+  		</select><br>
+		  <style> #unidad {
+            width: 40%;
+			margin: 10px 115px;
+			text-align: left;
+        }
+    	</style>
+
+<!-- DEPARTAMENTO (DEPENDE DE LA REGIÓN) -->
+	<label for="departamento">Departamento:</label>
+        <select id="departamento" name="departamento" onchange="actualizarMunicipios()" required>
+        </select><br>
+		<style> #departamento {
+            width: 40%;
+			margin: 10px 63px;
+			text-align: left;
+        }
+    	</style>            
+
+	          
+<!-- MUNICIPIO (DEPENDE DEL DEPARTAMENTO) -->
+	<label for="municipio">Municipio:</label>
+        <select id="municipio" name="municipio" ></select><br>
+		<style> #municipio {
+            width: 40%;
+			margin: 10px 96px;
+			text-align: left;
+        }
+    	</style>  
+
+<!-- VEREDA -->
+        <label for="vereda">Corregimiento/Vereda:</label>
+        <input type="text" id="vereda" name="vereda"><br>
+		<style> #vereda {
+            width: 40%;
+			margin: 10px 4px;
+			text-align: left;
+        }
+    	</style>  
+
+<!-- ZONA -->
+        <label for="zona">Zona:</label>
+        <select id="zona" name="zona" required>
+            <option value=""></option>
+            <option value="Rural">Rural</option>
+            <option value="Urbano">Urbano</option>
+        </select><br>
+		<style> #zona {
+            width: 40%;
+			margin: 10px 132px;
+			text-align: left;
+        }
+    	</style>  
+	</div>
+	<br>
+
+	<div class="inner-box">
+		<legend>Tipo Afectación</legend>
+
+<!-- TIPO DE ACCIÓN  -->
+        <br><br>
+		<label for="tipoAccion">Tipo de acción:</label>
+        <select id="tipoAccion" name="tipoAccion" onchange="actualizarAccion()" required>
+            <option value=""></option>
+	    <option value="Criminalidad">Criminalidad</option>
+            <option value="Operatividad">Operatividad </option>
+        </select><br>
+		<style> #tipoAccion {
+			width: 55%;
+			margin-left: 20%;
+			text-align: left;
+		}
+		</style>  
+	
+<!-- ACCIÓN  (DEPENDE DEL TIPO DE ACCIÓN) -->
+        <label for="Accion">Acción:</label>
+        <select id="Accion" name="Accion" onchange="actualizarsubAccion()" required>
+	</select><br>
+	<style> #Accion {
+		width: 55%;
+		margin-left: 28%;
+		text-align: left;
+		}
+	</style>  
+
+<!-- SUBCACCIÓN (DEPENDE DE LA ACCIÓN) -->
+        <label for="subAccion">Delito / Actividad:</label>
+        <select id="subAccion" name="subAccion" onchange="actualizarVictima()" required>
+	</select><br>
+	<style> #subAccion {
+		width: 55%;
+		margin-left: 18%;
+		text-align: left;
+	}
+	</style>
+
+
+<!-- VICTIMA/INFRAESTRUCTURA (DEPENDE DE LA ACCIÓN) -->
+        <label for="victima">Víctima/Infraestructura/Elemento:</label>
+        <select id="victima" name="victima" onchange="actualizarModalidad()" required>
+	</select><br>
+	<style> #victima {
+		width: 55%;
+		margin-left: 1.5%;
+		text-align: left;
+	}
+	</style>  
+	
+<!-- MODALIDAD -->
+        <label for="modalidad">Modalidad:</label>
+        <select id="modalidad" name="modalidad">
+        </select><br>
+		<style> #modalidad {
+			width: 55%;
+			margin-left: 24.5%;
+			text-align: left;
+		}
+		</style>  
+
+<!-- HECHOS -->
+        
+
+<div style="display: flex; align-items:center;">
+    <label for="hechos" style="width: 400px; margin-top: 5px;">Descripción de los hechos:</label>
+    <textarea id="hechos" name="hechos" required rows="15" cols="100" placeholder="Describa los hechos" style="width: 55%; text-align: left;"></textarea>
+</div>
+<style> #hechos {
+	width: 65%;
+	margin-left: -17.5%;
+	margin-top: 2%;
+	text-align:justify;
+}
+</style> 
+<br>
+
+<div class="inner-box">
+	<legend>Grupos Armados Organizados </legend>
+	<br>
+
+
+<!-- GRUPO ARMADO ILEGAL 1  -->
+        <label for="grupoIlegal1">Grupo al margen de la ley 1:</label>
+        <select id="grupoIlegal1" name="grupoIlegal1" onchange="actualizarBloque()" required>
+                <option value=""></option>
+		<option value="EMC">Estado Mayor Central FARC EMC (alias "Ivan Mordisco")</option>
+		<option value="EMB">Estado Mayor de los Bloques FARC EMB (alias "Calarca")</option>
+		<option value="ELN">Ejército de Liberación Nacional - ELN</option>
+		<option value="CS">Comuneros del Sur - ELN</option>
+		<option value="2M">Segunda Marquetalia</option>
+		<option value="CNEB">Coordinadora Nacional del Ejercito Bolivariano</option>
+		<option value="AGC">Autodefensas Gaitanistas de Colombia - AGC (Clan del Golfo)</option>
+		<option value="ACSN">Autodefensas Conquistadoras de la Sierra Nevada - ACSN (Los Pachenca)</option>
+		<option value="GDCO">GDCO</option>
+		<option value="GDO">GDO</option>
+		<option value="Por establecer">Por Establecer</option>
+        </select><br>
+		<style> #grupoIlegal1 {
+			width: 68%;
+			margin-left: 0.5%;
+			text-align: left;
+		}
+		</style> 
+
+<!-- BLOQUE 1 -->
+	<label for="bloque1">Bloque / Estructura:</label>
+	<select id="bloque1" name="bloque1" onchange="actualizarFrente(); mostrarOtroBloque();" required>
+  	</select><br>
+	  <style> #bloque1 {
+		width: 68%;
+		margin-left: 9%;
+		text-align: left;
+	}
+	</style> 
+
+	</select>
+	<input type="text" id="otroBloqueInput" placeholder="Escriba otro BLoque / Estructura" style="display: none;">
+
+<!-- FRENTE 1 -->
+   	<label for="frente1">Frente / Subestructura:</label>     
+	<select id="frente1" name="frente1" onchange="mostrarOtroFrente()">
+ 	   <!-- Las opciones se llenarán dinámicamente -->
+	</select>
+	<input type="text" id="otroFrenteInput" placeholder="Escriba otro Frente / Subestructura" style="display: none;">
+	<style> #frente1 {
+		width: 68%;
+		margin-left: 6%;
+		text-align: left;
+	}
+	</style>
+<br>
+<br>
+<br>
+<br>
+<!-- GRUPO AL MARGEN DE LA LEY 2 -->
+
+        <label for="grupoIlegal2">Grupo al margen de la ley 2:</label>
+        <select id="grupoIlegal2" name="grupoIlegal2" onchange="actualizarBloque2()">
+                <option value=""></option>
+		<option value="EMC">Estado Mayor Central FARC EMC (alias "Ivan Mordisco")</option>
+		<option value="EMB">Estado Mayor de los Bloques FARC EMB (alias "Calarca")</option>
+		<option value="ELN">Ejército de Liberación Nacional - ELN</option>
+		<option value="CS">Comuneros del Sur - ELN</option>
+		<option value="2M">Segunda Marquetalia</option>
+		<option value="CNEB">Coordinadora Nacional del Ejercito Bolivariano</option>
+		<option value="AGC">Autodefensas Gaitanistas de Colombia - AGC (Clan del Golfo)</option>
+		<option value="ACSN">Autodefensas Conquistadoras de la Sierra Nevada - ACSN (Los Pachenca)</option>
+		<option value="GDCO">GDCO</option>
+		<option value="GDO">GDO</option>
+		<option value="Por establecer">Por Establecer</option>
+        </select><br>
+		<style> #grupoIlegal2 {
+			width: 68%;
+			margin-left: 0.5%;
+			text-align: left;
+		}
+		</style> 
+
+<!-- BLOQUE  2 -->
+	<label for="bloque2">Bloque / Estructura:</label>
+	<select id="bloque2" name="bloque2" onchange="actualizarFrente2(); mostrarOtroBloque2();">
+  	</select><br>
+	 
+	</select>
+	<input type="text" id="otroBloqueInput2" placeholder="Escriba otro BLoque / Estructura" style="display: none;">
+
+	<style> #bloque2 {
+		width: 68%;
+		margin-left: 9%;
+		text-align: left;
+	}
+	</style> 
+
+
+<!-- FRENTE 2 -->
+
+   	<label for="frente2">Frente / Subestructura:</label>
+	<select id="frente2" name="frente2" onchange="mostrarOtroFrente2()">
+ 	   <!-- Las opciones se llenarán dinámicamente -->
+	</select>
+	<input type="text" id="otroFrenteInput2" placeholder="Escriba otro Frente / Subestructura" style="display: none;">
+	<style> #frente2 {
+		width: 68%;
+		margin-left: 6%;
+		text-align: left;
+	}
+	</style>
+</div>
+<br>
+
+<div class="inner-box">
+	<legend>Sectores afectados </legend>
+	<br>
+
+<!-- SECTOR AFECTADO  -->
+        <label for="sectorAfectado">Sector afectado:</label>
+        <select id="sectorAfectado" name="sectorAfectado" onchange ="actualizarSector()" required>
+                <option value=""></option>
+		<option value="Población civil">Población civil</option>
+    		<option value="Fuerza publica">Fuerza publica</option>
+		<option value="Sector estratégico">Sector estratégico</option>
+		<option value="Población civil y fuerza pública">Población civil y fuerza pública</option>
+        </select>
+		<style> #sectorAfectado {
+			width: 78%;
+			margin-left: 2.5%;
+			text-align: left;
+		}
+		</style>
+		<br>
+
+<!-- FUERZA AFECTADA (DEPENDE DEL SECTOR AFECTADO)  -->
+        <label for="fuerzaAfectada">Fuerza Afectada:</label>
+        <select id="fuerzaAfectada" name="fuerzaAfectada"></select><br>
+		<style> #fuerzaAfectada {
+			width: 78%;
+			margin-left: 2%;
+			text-align: left;
+		}
+		</style>
+</div>
+<br> 
+
+
+<!-- # HOMICIDIOS-->
+<div class="inner-box">
+	<legend>Víctimas de Homicidios </legend>
+	<br>
+
+	<label for="homi_ponal">Policías </label> 
+	<input type="number" id="homi_ponal" name="homi_ponal" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #homi_ponal {
+            width: 20%; 
+			margin: 10px 100px;
+			text-align: center;
+		}
+    </style>
+
+	<label for="homi_ffmm">Militares </label> 
+	<input type="number" id="homi_ffmm" name="homi_ffmm" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #homi_ffmm {
+            width: 20%; 
+			margin: 10px 95px;
+			text-align: center;
+		}
+    </style>
+
+	<label for="homi_lider">Lideres Sociales</label> 
+	<input type="number" id="homi_lider" name="homi_lider" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #homi_lider {
+            width: 20%; 
+			margin: 10px 35px;
+			text-align: center;
+		}
+    </style>
+
+	<label for="homi_ppr">PPR (firmantes paz ) </label> 
+	<input type="number" id="homi_ppr" name="homi_ppr" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #homi_ppr {
+            width: 20%; 
+			margin: 10px 5px;
+			text-align: center;
+		}
+	</style>
+
+	<label for="homi_militantes">Combatienetes</label> 
+	<input type="number" id="homi_militantes" name="homi_militantes" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #homi_militantes {
+            width: 20%; 
+			margin: 10px 46px;
+			text-align: center;
+		}
+	</style>
+
+	<label for="homi_nna">Menores de Edad </label> 
+	<input type="number" id="homi_nna" name="homi_nna" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #homi_nna {
+            width: 20%; 
+			margin: 10px 29px;
+			text-align: center;
+		}
+	</style>
+
+	<label for="homi_civil">Particulares </label> 
+	<input type="number" id="homi_civil" name="homi_civil" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #homi_civil {
+            width: 20%; 
+			margin: 10px 69px;
+			text-align: center;
+		}
+	</style>
+</div>
+<br>
+
+<!-- # LESIONADOS-->
+<div class="inner-box">
+	<legend>Víctimas de Lesiones</legend>
+	<br>
+
+	<label for="lesi_ponal">Policías </label> 
+	<input type="number" id="lesi_ponal" name="lesi_ponal" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #lesi_ponal {
+            width: 20%; 
+			margin: 10px 100px;
+			text-align: center;
+		}
+    </style>
+
+	<label for="lesi_ffmm">Militares </label> 
+	<input type="number" id="lesi_ffmm" name="lesi_ffmm" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #lesi_ffmm {
+            width: 20%; 
+			margin: 10px 95px;
+			text-align: center;
+		}
+    </style>
+
+	<label for="lesi_lider">Lideres Sociales</label> 
+	<input type="number" id="lesi_lider" name="lesi_lider" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #lesi_lider {
+            width: 20%; 
+			margin: 10px 35px;
+			text-align: center;
+		}
+    </style>
+
+	<label for="lesi_ppr">PPR (firmantes paz ) </label> 
+	<input type="number" id="lesi_ppr" name="lesi_ppr" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #lesi_ppr {
+            width: 20%; 
+			margin: 10px 5px;
+			text-align: center;
+		}
+	</style>
+
+	<label for="lesi_militantes">Combatienetes</label> 
+	<input type="number" id="lesi_militantes" name="lesi_militantes" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #lesi_militantes {
+            width: 20%; 
+			margin: 10px 46px;
+			text-align: center;
+		}
+	</style>
+
+	<label for="lesi_nna">Menores de Edad </label> 
+	<input type="number" id="lesi_nna" name="lesi_nna" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #lesi_nna {
+            width: 20%; 
+			margin: 10px 29px;
+			text-align: center;
+		}
+	</style>
+
+	<label for="lesi_civil">Particulares </label> 
+	<input type="number" id="lesi_civil" name="lesi_civil" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #lesi_civil {
+            width: 20%; 
+			margin: 10px 69px;
+			text-align: center;
+		}
+	</style>
+</div>
+<br>
+
+
+<!-- # SECUESTRADOS-->
+<div class="inner-box">
+	<legend>Víctimas de secuestro / retención ilegal</legend>
+	<br>
+
+	<label for="sec_ponal">Policías </label> 
+	<input type="number" id="sec_ponal" name="sec_ponal" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #sec_ponal {
+            width: 20%; 
+			margin: 10px 100px;
+			text-align: center;
+		}
+    </style>
+
+	<label for="sec_ffmm">Militares </label> 
+	<input type="number" id="sec_ffmm" name="sec_ffmm" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #sec_ffmm {
+            width: 20%; 
+			margin: 10px 95px;
+			text-align: center;
+		}
+    </style>
+
+	<label for="sec_lider">Lideres Sociales</label> 
+	<input type="number" id="sec_lider" name="sec_lider" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #sec_lider {
+            width: 20%; 
+			margin: 10px 35px;
+			text-align: center;
+		}
+    </style>
+
+	<label for="sec_ppr">PPR (firmantes paz ) </label> 
+	<input type="number" id="sec_ppr" name="sec_ppr" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #sec_ppr {
+            width: 20%; 
+			margin: 10px 5px;
+			text-align: center;
+		}
+	</style>
+
+	<label for="sec_militantes">Combatienetes</label> 
+	<input type="number" id="sec_militantes" name="sec_militantes" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #sec_militantes {
+            width: 20%; 
+			margin: 10px 46px;
+			text-align: center;
+		}
+	</style>
+
+	<label for="sec_nna">Menores de Edad </label> 
+	<input type="number" id="sec_nna" name="sec_nna" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #sec_nna {
+            width: 20%; 
+			margin: 10px 29px;
+			text-align: center;
+		}
+	</style>
+
+	<label for="sec_civil">Particulares </label> 
+	<input type="number" id="sec_civil" name="sec_civil" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #sec_civil {
+            width: 20%; 
+			margin: 10px 69px;
+			text-align: center;
+		}
+	</style>
+</div>
+<br>
+
+
+<!-- # CAPTURADOS-->
+<div class="inner-box">
+	<legend>Capturados</legend>
+	<br>
+
+	<label for="Capt_ppr">PPR (firmantes paz ) </label> 
+	<input type="number" id="Capt_ppr" name="Capt_ppr" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #Capt_ppr {
+            width: 20%; 
+			margin: 10px 5px;
+			text-align: center;
+		}
+	</style>
+
+	<label for="Capt_militantes">Combatienetes</label> 
+	<input type="number" id="Capt_militantes" name="Capt_militantes" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #Capt_militantes {
+            width: 20%; 
+			margin: 10px 46px;
+			text-align:center;
+		}
+	</style>
+
+	<label for="Capt_civil">Particulares </label> 
+	<input type="number" id="Capt_civil" name="Capt_civil" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #Capt_civil {
+            width: 20%; 
+			margin: 10px 69px;
+			text-align: center;
+		}
+	</style>
+</div>
+<br>
+
+
+<!-- # APREHENDIDOS-->
+<div class="inner-box">
+	<legend>Aprehendidos</legend>
+	<br>
+
+	<label for="Aprehen_militantes">Menores Aprehendidos</label> 
+	<input type="number" id="Aprehen_militantes" name="Aprehen_militantes" required step="1" min="0" placeholder="0"><br>
+	<style>
+        #Aprehen_militantes {
+            width: 20%; 
+			margin: 10px 46px;
+			text-align: center;
+		}
+	</style>
+</div>
+<br>
+
+
+<!-- ENVIAR -->
+        
+<input type="submit" value="Enviar" style="background-color: blue; color: white; margin-left: 65px; none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+    </form>
+</div>
+
+
+
+
+<script>
+    // Actualiza las unidades según la región seleccionada
+    function actualizarUnidades() {
+        const region = document.getElementById('region').value;
+        const unidad = document.getElementById('unidad');
+
+        unidad.innerHTML = ''; // Limpiar las opciones anteriores
+
+        if (region === 'REMSA') {
+            unidad.innerHTML = `
+				<option value=""></option>
+                <option value="MESOA">MESOA</option>
+                <option value="COENO">COENO</option>
+                <option value="COSOC">COSOC</option>
+                <option value="MEBOG">MEBOG</option>
+            `;
+        } else if (region === 'REGIÓN 1') {
+            unidad.innerHTML = `
+				<option value=""></option>               
+				<option value="METUN">METUN</option>
+				<option value="DEAMA">DEAMA</option>
+                <option value="DECUN">DECUN</option>
+                <option value="DEBOY">DEBOY</option>
+                <option value="DESAP">DESAP</option>
+            `;
+        } else if (region === 'REGIÓN 2') {
+            unidad.innerHTML = `
+				<option value=""></option>
+                <option value="METIB">METIB</option>
+				<option value="MENEV">MENEV</option>
+                <option value="DETOL">DETOL</option>
+                <option value="DEUIL">DEUIL</option>
+                <option value="DECAQ">DECAQ</option>
+				<option value="DEPUY">DEPUY</option>
+            `;
+} else if (region === 'REGIÓN 3') {
+            unidad.innerHTML = `
+				<option value=""></option>
+                <option value="MEPER">MEPER</option>
+				<option value="MEMAZ">MEMAZ</option>
+                <option value="DERIS">DERIS</option>
+                <option value="DECAL">DECAL</option>
+                <option value="DEQUI">DEQUI</option>
+            `;
+} else if (region === 'REGIÓN 4') {
+            unidad.innerHTML = `
+				<option value=""></option>
+                <option value="MECAL">MECAL</option>
+				<option value="MEPAS">MEPAS</option>
+                <option value="MEPOY">MEPOY</option>
+                <option value="DEVAL">DEVAL</option>
+                <option value="DECAU">DECAU</option>
+				<option value="DENAR">DENAR</option>
+            `;
+} else if (region === 'REGIÓN 5') {
+            unidad.innerHTML = `
+				<option value=""></option>
+                <option value="MEBUC">MEBUC</option>
+				<option value="MECUC">MECUC</option>
+                <option value="DESAN">DESAN</option>
+                <option value="DENOR">DENOR</option>
+                <option value="DEARA">DEARA</option>
+				<option value="DEMAM">DEMAM</option>
+            `;
+} else if (region === 'REGIÓN 6') {
+            unidad.innerHTML = `
+				<option value=""></option>
+                <option value="MEVAL">MEVAL</option>
+				<option value="MEMOT">MEMOT</option>
+                <option value="DEANT">DEANT</option>
+                <option value="DECHO">DECHO</option>
+                <option value="DEURA">DEURA</option>
+				<option value="DECOR">DECOR</option>
+            `;
+} else if (region === 'REGIÓN 7') {
+            unidad.innerHTML = `
+				<option value=""></option>
+                <option value="MEVIL">MEVIL</option>
+				<option value="DEMET">DEMET</option>
+                <option value="DECAS">DECAS</option>
+                <option value="DEGUN">DEGUN</option>
+                <option value="DEGUV">DEGUV</option>
+				<option value="DEVIC">DEVIC</option>
+				<option value="DEVAU">DEVAU</option>
+            `;
+} else if (region === 'REGIÓN 8') {
+            unidad.innerHTML = `
+				<option value=""></option>
+                <option value="MEBAR">MEBAR</option>
+				<option value="MECAR">MECAR</option>
+				<option value="MESAN">MESAN</option>
+                <option value="MEVAP">MEVAP</option>
+                <option value="DEATA">DEATA</option>
+                <option value="DEBOL">DEBOL</option>
+				<option value="DEMAG">DEMAG</option>
+				<option value="DEGUA">DEGUA</option>
+				<option value="DESUC">DESUC</option>
+				<option value="DECES">DECES</option>
+		`;
+        }
+    }
+
+	
+function actualizarDepartamentos() {
+        const unidad = document.getElementById('unidad').value;
+        const departamento = document.getElementById('departamento');
+
+        departamento.innerHTML = ''; // Limpiar las opciones anteriores
+
+        if (unidad === 'METUN') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Boyaca">Boyacá	</option>
+                `;
+        } else if (unidad === 'DEAMA') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Amazonas">Amazonas</option>
+		`;
+	} else if (unidad === 'DECUN') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Cundinamarca3">Cundinamarca</option>
+		`;
+	} else if (unidad === 'DEBOY') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Boyaca1">Boyacá</option>
+		`;
+	} else if (unidad === 'DESAP') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="San Andres y Providencia">San Andrés y Providencia</option>
+		`;
+	} else if (unidad === 'MEBOG') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Bogota">Bogotá D.C.</option>
+		`;
+	} else if (unidad === 'MESOA') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Cundinamarca">Cundinamarca</option>
+              	`;
+	} else if (unidad === 'COENO') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Cundinamarca1">Cundinamarca</option>
+              	`;
+	} else if (unidad === 'COSOC') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Cundinamarca2">Cundinamarca</option>
+              	`;
+	} else if (unidad === 'METIB') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Tolima">Tolima</option>
+              	`;
+	} else if (unidad === 'MENEV') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Huila">Huila</option>
+              	`;
+	} else if (unidad === 'DETOL') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Tolima1">Tolima</option>
+              	`;
+	} else if (unidad === 'DEUIL') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Huila1">Huila</option>
+              	`;
+	} else if (unidad === 'DECAQ') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Florencia">Florencia</option>
+              	`;
+	} else if (unidad === 'DEPUY') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Putumayo">Putumayo</option>
+              	`;
+	} else if (unidad === 'MEPER') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Risaralda">Risaralda</option>
+              	`;
+	} else if (unidad === 'MEMAZ') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Caldas">Caldas</option>
+              	`;
+	} else if (unidad === 'DERIS') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Risaralda1">Risaralda</option>
+              	`;
+	} else if (unidad === 'DECAL') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Caldas1">Caldas</option>
+              	`;
+	} else if (unidad === 'DEQUI') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Quindio">Quindio</option>
+              	`;
+	} else if (unidad === 'MECAL') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Valle del Cauca">Valle del Cauca</option>
+              	`;
+	} else if (unidad === 'MEPAS') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Nariño">Nariño</option>
+              	`;
+	} else if (unidad === 'MEPOY') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Cauca">Cauca</option>
+              	`;
+	} else if (unidad === 'DEVAL') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Valle del Cauca1">Valle del Cauca</option>
+              	`;
+	} else if (unidad === 'DECAU') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Cauca1">Cauca</option>
+              	`;
+	} else if (unidad === 'DENAR') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Nariño1">Nariño</option>
+              	`;
+	} else if (unidad === 'MEBUC') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Santander">Santander</option>
+              	`;
+	} else if (unidad === 'MECUC') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Norte de Santander">Norte de Santander</option>
+              	`;
+	}  else if (unidad === 'DESAN') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Santander1">Santander</option>
+              	`;
+	} else if (unidad === 'DENOR') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Norte de Santander1">Norte de Santander</option>
+              	`;
+	}  else if (unidad === 'DEARA') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Arauca">Arauca</option>
+              	`;
+	} else if (unidad === 'DEMAM') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Santander2">Santander</option>
+                <option value="Antioquia2">Antioquia</option>
+                <option value="Boyaca2">Boyacá</option>
+                <option value="Bolivar2">Bolívar</option>
+              	`;
+	} else if (unidad === 'MEVAL') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Antioquia">Antioquia</option>
+              	`;
+	} else if (unidad === 'MEMOT') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Cordoba">Córdoba</option>
+              	`;
+	} else if (unidad === 'DEANT') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Antioquia1">Antioquia</option>
+              	`;
+	} else if (unidad === 'DECHO') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Choco">Chocó</option>
+              	`;
+	} else if (unidad === 'DEURA') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Antioquia3">Antioquia</option>
+                <option value="Choco1">Chocó</option>
+              	`;
+	} else if (unidad === 'DECOR') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Cordoba1">Córdoba</option>
+              	`;
+	} else if (unidad === 'MEVIL') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Meta">Meta</option>
+              	`;
+	} else if (unidad === 'DEMET') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Meta1">Meta</option>
+              	`;
+	} else if (unidad === 'DECAS') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Casanare">Casanare</option>
+              	`;
+	} else if (unidad === 'DEGUN') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Guainia">Guainía</option>
+              	`;
+	} else if (unidad === 'DEGUV') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Guaviare">Guaviare</option>
+              	`;
+	} else if (unidad === 'DEVIC') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Vichada">Vichada</option>
+              	`;
+	} else if (unidad === 'DEVAU') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Vaupes">Vaupés</option>
+              	`;
+	}  else if (unidad === 'MEBAR') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Atlantico">Atlántico</option>
+              	`;
+	}  else if (unidad === 'MECAR') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Bolivar">Bolívar</option>
+              	`;
+	}  else if (unidad === 'MESAN') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Magdalena">Magdalena</option>
+              	`;
+	}  else if (unidad === 'MEVAP') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Cesar">Cesar</option>
+              	`;
+	}  else if (unidad === 'DEATA') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Atlantico1">Atlántico</option>
+              	`;
+	}   else if (unidad === 'DEBOL') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Bolivar1">Bolívar</option>
+              	`;
+	}  else if (unidad === 'DEMAG') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Magdalena1">Magdalena</option>
+              	`;
+	}  else if (unidad === 'DEGUA') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="La Guajira">La Guajira</option>
+              	`;
+	}  else if (unidad === 'DESUC') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Sucre">Sucre</option>
+              	`;
+	}  else if (unidad === 'DECES') {
+            departamento.innerHTML = `
+				<option value=""></option>	
+                <option value="Cesar1">Cesar</option>
+              	`;
+	}
+}
+
+    // Actualizar municipios según el departamento seleccionado
+ 
+
+   
+  function actualizarMunicipios() {
+        const departamento = document.getElementById('departamento').value;
+        const municipio = document.getElementById('municipio');
+
+        municipio.innerHTML = ''; // Limpiar las opciones anteriores
+
+	if (departamento === 'Boyaca') {
+            municipio.innerHTML = `
+		<option value=""></option>
+		<option value="Chiquiza">Chíquiza</option>
+		<option value="Chivata">Chivatá</option>
+		<option value="Combita">Cómbita</option>
+		<option value="Cucaita">Cucaita</option>
+		<option value="Motavita">Motavita</option>
+		<option value="Oicata">Oicatá</option>
+		<option value="Samaca">Samacá</option>
+		<option value="Siachoque">Siachoque</option>
+		<option value="Sora">Sora</option>
+		<option value="Soraca">Soracá</option>
+		<option value="Sotaquira">Sotaquirá</option>
+		<option value="Toca">Toca</option>
+		<option value="Tunja">Tunja</option>
+		<option value="Tuta">Tuta</option>
+		<option value="Ventaquemada">Ventaquemada</option>
+            `;
+        } else if (departamento === 'Boyaca1') {
+            municipio.innerHTML = `
+        <option value="Almeida">Almeida</option>
+		<option value="Aquitania">Aquitania</option>
+		<option value="Arcabuco">Arcabuco</option>
+		<option value="Belén">Belén</option>
+		<option value="Berbeo">Berbeo</option>
+		<option value="Betéitiva">Betéitiva</option>
+		<option value="Boavita">Boavita</option>
+		<option value="Boyacá">Boyacá</option>
+		<option value="Briceño">Briceño</option>
+		<option value="Buenavista">Buenavista</option>
+		<option value="Busbanzá">Busbanzá</option>
+		<option value="Caldas">Caldas</option>
+		<option value="Campohermoso">Campohermoso</option>
+		<option value="Cerinza">Cerinza</option>
+		<option value="Chinavita">Chinavita</option>
+		<option value="Chiquinquirá">Chiquinquirá</option>
+		<option value="Chiscas">Chiscas</option>
+		<option value="Chita">Chita</option>
+		<option value="Chitaraque">Chitaraque</option>
+		<option value="Chivor">Chivor</option>
+		<option value="Ciénega">Ciénega</option>
+		<option value="Coper">Coper</option>
+		<option value="Corrales">Corrales</option>
+		<option value="Covarachía">Covarachía</option>
+		<option value="Cubará">Cubará</option>
+		<option value="Cuítiva">Cuítiva</option>
+		<option value="Duitama">Duitama</option>
+		<option value="El Cocuy">El Cocuy</option>
+		<option value="El Espino">El Espino</option>
+		<option value="Firavitoba">Firavitoba</option>
+		<option value="Floresta">Floresta</option>
+		<option value="Gachantivá">Gachantivá</option>
+		<option value="Gámeza">Gámeza</option>
+		<option value="Garagoa">Garagoa</option>
+		<option value="Guacamayas">Guacamayas</option>
+		<option value="Guateque">Guateque</option>
+		<option value="Guayatá">Guayatá</option>
+		<option value="Güicán">Güicán</option>
+		<option value="Iza">Iza</option>
+		<option value="Jenesano">Jenesano</option>
+		<option value="Jericó">Jericó</option>
+		<option value="La Capilla">La Capilla</option>
+		<option value="La Uvita">La Uvita</option>
+		<option value="La Victoria">La Victoria</option>
+		<option value="Labranzagrande">Labranzagrande</option>
+		<option value="Macanal">Macanal</option>
+		<option value="Maripí">Maripí</option>
+		<option value="Miraflores">Miraflores</option>
+		<option value="Mongua">Mongua</option>
+		<option value="Monguí">Monguí</option>
+		<option value="Moniquirá">Moniquirá</option>
+		<option value="Muzo">Muzo</option>
+		<option value="Nobsa">Nobsa</option>
+		<option value="Nuevo Colón">Nuevo Colón</option>
+		<option value="Otanche">Otanche</option>
+		<option value="Pachavita">Pachavita</option>
+		<option value="Páez">Páez</option>
+		<option value="Paipa">Paipa</option>
+		<option value="Pajarito">Pajarito</option>
+		<option value="Panqueba">Panqueba</option>
+		<option value="Pauna">Pauna</option>
+		<option value="Paya">Paya</option>
+		<option value="Paz de Río">Paz de Río</option>
+		<option value="Pesca">Pesca</option>
+		<option value="Pisba">Pisba</option>
+		<option value="Quípama">Quípama</option>
+		<option value="Ramiriquí">Ramiriquí</option>
+		<option value="Ráquira">Ráquira</option>
+		<option value="Rondón">Rondón</option>
+		<option value="Saboyá">Saboyá</option>
+		<option value="Sáchica">Sáchica</option>
+		<option value="San Eduardo">San Eduardo</option>
+		<option value="San José de Pare">San José de Pare</option>
+		<option value="San Luis de Gaceno">San Luis de Gaceno</option>
+		<option value="San Mateo">San Mateo</option>
+		<option value="San Miguel de Sema">San Miguel de Sema</option>
+		<option value="San Pablo de Borbur">San Pablo de Borbur</option>
+		<option value="Santa María">Santa María</option>
+		<option value="Santa Rosa de Viterbo">Santa Rosa de Viterbo</option>
+		<option value="Santa Sofía">Santa Sofía</option>
+		<option value="Santana">Santana</option>
+		<option value="Sativanorte">Sativanorte</option>
+		<option value="Sativasur">Sativasur</option>
+		<option value="Soatá">Soatá</option>
+		<option value="Socha">Socha</option>
+		<option value="Socotá">Socotá</option>
+		<option value="Sogamoso">Sogamoso</option>
+		<option value="Somondoco">Somondoco</option>
+		<option value="Susacón">Susacón</option>
+		<option value="Sutamarchán">Sutamarchán</option>
+		<option value="Sutatenza">Sutatenza</option>
+		<option value="Tasco">Tasco</option>
+		<option value="Tenza">Tenza</option>
+		<option value="Tibaná">Tibaná</option>
+		<option value="Tibasosa">Tibasosa</option>
+		<option value="Tinjacá">Tinjacá</option>
+		<option value="Tipacoque">Tipacoque</option>
+		<option value="Togüí">Togüí</option>
+		<option value="Tópaga">Tópaga</option>
+		<option value="Tota">Tota</option>
+		<option value="Tununguá">Tununguá</option>
+		<option value="Turmequé">Turmequé</option>
+		<option value="Tutazá">Tutazá</option>
+		<option value="Úmbita">Úmbita</option>
+		<option value="Villa de Leyva">Villa de Leyva</option>
+		<option value="Viracachá">Viracachá</option>
+		<option value="Zetaquira">Zetaquira</option>
+		`;
+	
+	}else if (departamento === 'Amazonas') {
+            municipio.innerHTML = `
+        <option value="El Encanto">El Encanto</option>
+		<option value="La Chorrera">La Chorrera</option>
+		<option value="La Pedrera">La Pedrera</option>
+		<option value="La Victoria">La Victoria</option>
+		<option value="Leticia">Leticia</option>
+		<option value="Mirití-Paraná">Mirití-Paraná</option>
+		<option value="Puerto Alegría">Puerto Alegría</option>
+		<option value="Puerto Arica">Puerto Arica</option>
+		<option value="Puerto Nariño">Puerto Nariño</option>
+		<option value="Puerto Santander">Puerto Santander</option>
+		<option value="Tarapacá">Tarapacá</option>
+		`;
+	
+	}else if (departamento === 'San Andres y Providencia') {
+            municipio.innerHTML = `
+        <option value="San Andrés">San Andrés</option>
+		<option value="Providencia y Santa Catalina">Providencia y Santa Catalina</option>
+		`;
+	
+	}else if (departamento === 'Bogota') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Bogota1">Bogotá D.C.</option>
+		`;
+	
+	} else if (departamento === 'Cundinamarca') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Soacha">Soacha</option>
+		<option value="Sibate">Sibaté</option>
+		`;
+
+	}else if (departamento === 'Cundinamarca1') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Cajicá">Cajicá</option>
+		<option value="Chía">Chía</option>
+		<option value="Cogua">Cogua</option>
+		<option value="Cota">Cota</option>
+		<option value="Gachancipá">Gachancipá</option>
+		<option value="Guasca">Guasca</option>
+		<option value="La Calera">La Calera</option>
+		<option value="Nemocón">Nemocón</option>
+		<option value="Sopó">Sopó</option>
+		<option value="Tabio">Tabio</option>
+		<option value="Tenjo">Tenjo</option>
+		<option value="Tocancipá">Tocancipá</option>
+		<option value="Zipaquirá">Zipaquirá</option>
+		`;
+	}else if (departamento === 'Cundinamarca2') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Bojacá">Bojacá</option>
+		<option value="El Rosal">El Rosal</option>
+		<option value="Facatativá">Facatativá</option>
+		<option value="Funza">Funza</option>
+		<option value="Madrid">Madrid</option>
+		<option value="Mosquera">Mosquera</option>
+		<option value="Subachoque">Subachoque</option>
+		<option value="Zipacón">Zipacón</option>
+		`;
+
+	}else if (departamento === 'Cundinamarca3') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Agua de Dios">Agua de Dios</option>
+		<option value="Albán">Albán</option>
+		<option value="Anapoima">Anapoima</option>
+		<option value="Anolaima">Anolaima</option>
+		<option value="Apulo">Apulo</option>
+		<option value="Arbeláez">Arbeláez</option>
+		<option value="Beltrán">Beltrán</option>
+		<option value="Bituima">Bituima</option>
+		<option value="Cabrera">Cabrera</option>
+		<option value="Cachipay">Cachipay</option>
+		<option value="Caparrapí">Caparrapí</option>
+		<option value="Cáqueza">Cáqueza</option>
+		<option value="Carmen de Carupa">Carmen de Carupa</option>
+		<option value="Chaguaní">Chaguaní</option>
+		<option value="Chipaque">Chipaque</option>
+		<option value="Choachí">Choachí</option>
+		<option value="Chocontá">Chocontá</option>
+		<option value="Cucunubá">Cucunubá</option>
+		<option value="El Colegio">El Colegio</option>
+		<option value="El Peñón">El Peñón</option>
+		<option value="Fómeque">Fómeque</option>
+		<option value="Fosca">Fosca</option>
+		<option value="Fúquene">Fúquene</option>
+		<option value="Fusagasugá">Fusagasugá</option>
+		<option value="Gachalá">Gachalá</option>
+		<option value="Gachetá">Gachetá</option>
+		<option value="Gama">Gama</option>
+		<option value="Girardot">Girardot</option>
+		<option value="Granada">Granada</option>
+		<option value="Guachetá">Guachetá</option>
+		<option value="Guaduas">Guaduas</option>
+		<option value="Guataquí">Guataquí</option>
+		<option value="Guatavita">Guatavita</option>
+		<option value="Guayabal de Síquima">Guayabal de Síquima</option>
+		<option value="Guayabetal">Guayabetal</option>
+		<option value="Gutiérrez">Gutiérrez</option>
+		<option value="Jerusalén">Jerusalén</option>
+		<option value="Junín">Junín</option>
+		<option value="La Mesa">La Mesa</option>
+		<option value="La Palma">La Palma</option>
+		<option value="La Peña">La Peña</option>
+		<option value="La Vega">La Vega</option>
+		<option value="Lenguazaque">Lenguazaque</option>
+		<option value="Machetá">Machetá</option>
+		<option value="Manta">Manta</option>
+		<option value="Medina">Medina</option>
+		<option value="Nariño">Nariño</option>
+		<option value="Nilo">Nilo</option>
+		<option value="Nimaima">Nimaima</option>
+		<option value="Nocaima">Nocaima</option>
+		<option value="Pacho">Pacho</option>
+		<option value="Paime">Paime</option>
+		<option value="Pandi">Pandi</option>
+		<option value="Paratebueno">Paratebueno</option>
+		<option value="Pasca">Pasca</option>
+		<option value="Puerto Salgar">Puerto Salgar</option>
+		<option value="Pulí">Pulí</option>
+		<option value="Quebradanegra">Quebradanegra</option>
+		<option value="Quetame">Quetame</option>
+		<option value="Quipile">Quipile</option>
+		<option value="Ricaurte">Ricaurte</option>
+		<option value="San Antonio del Tequendama">San Antonio del Tequendama</option>
+		<option value="San Bernardo">San Bernardo</option>
+		<option value="San Cayetano">San Cayetano</option>
+		<option value="San Francisco">San Francisco</option>
+		<option value="San Juan de Rioseco">San Juan de Rioseco</option>
+		<option value="Sasaima">Sasaima</option>
+		<option value="Sesquilé">Sesquilé</option>
+		<option value="Silvania">Silvania</option>
+		<option value="Simijaca">Simijaca</option>
+		<option value="Suesca">Suesca</option>
+		<option value="Supatá">Supatá</option>
+		<option value="Susa">Susa</option>
+		<option value="Sutatausa">Sutatausa</option>
+		<option value="Tausa">Tausa</option>
+		<option value="Tena">Tena</option>
+		<option value="Tibacuy">Tibacuy</option>
+		<option value="Tibirita">Tibirita</option>
+		<option value="Tocaima">Tocaima</option>
+		<option value="Topaipí">Topaipí</option>
+		<option value="Ubalá">Ubalá</option>
+		<option value="Ubaque">Ubaque</option>
+		<option value="Ubaté">Ubaté</option>
+		<option value="Une">Une</option>
+		<option value="Útica">Útica</option>
+		<option value="Venecia">Venecia</option>
+		<option value="Vergara">Vergara</option>
+		<option value="Vianí">Vianí</option>
+		<option value="Villagómez">Villagómez</option>
+		<option value="Villapinzón">Villapinzón</option>
+		<option value="Villeta">Villeta</option>
+		<option value="Viotá">Viotá</option>
+		<option value="Yacopí">Yacopí</option>
+		`;
+
+	} else if (departamento === 'Tolima') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Alvarado">Alvarado</option>
+		<option value="Cajamarca">Cajamarca</option>
+		<option value="Ibagué">Ibagué</option>
+		<option value="Piedras">Piedras</option>
+		`;
+
+	}else if (departamento === 'Huila') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Aipe">Aipe</option>
+		<option value="Neiva">Neiva</option>
+		<option value="Palermo">Palermo</option>
+		<option value="Rivera">Rivera</option>
+		`;
+
+	}else if (departamento === 'Tolima1') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Alpujarra">Alpujarra</option>
+		<option value="Ambalema">Ambalema</option>
+		<option value="Anzoátegui">Anzoátegui</option>
+		<option value="Armero">Armero</option>
+		<option value="Ataco">Ataco</option>
+		<option value="Carmen de Apicalá">Carmen de Apicalá</option>
+		<option value="Casabianca">Casabianca</option>
+		<option value="Chaparral">Chaparral</option>
+		<option value="Coello">Coello</option>
+		<option value="Coyaima">Coyaima</option>
+		<option value="Cunday">Cunday</option>
+		<option value="Dolores">Dolores</option>
+		<option value="Espinal">Espinal</option>
+		<option value="Falan">Falan</option>
+		<option value="Flandes">Flandes</option>
+		<option value="Fresno">Fresno</option>
+		<option value="Guamo">Guamo</option>
+		<option value="Herveo">Herveo</option>
+		<option value="Honda">Honda</option>
+		<option value="Icononzo">Icononzo</option>
+		<option value="Lérida">Lérida</option>
+		<option value="Líbano">Líbano</option>
+		<option value="Mariquita">Mariquita</option>
+		<option value="Melgar">Melgar</option>
+		<option value="Murillo">Murillo</option>
+		<option value="Natagaima">Natagaima</option>
+		<option value="Ortega">Ortega</option>
+		<option value="Palocabildo">Palocabildo</option>
+		<option value="Planadas">Planadas</option>
+		<option value="Prado">Prado</option>
+		<option value="Purificación">Purificación</option>
+		<option value="Rioblanco">Rioblanco</option>
+		<option value="Roncesvalles">Roncesvalles</option>
+		<option value="Rovira">Rovira</option>
+		<option value="Saldaña">Saldaña</option>
+		<option value="San Antonio">San Antonio</option>
+		<option value="San Luis">San Luis</option>
+		<option value="Santa Isabel">Santa Isabel</option>
+		<option value="Suárez">Suárez</option>
+		<option value="Valle de San Juan">Valle de San Juan</option>
+		<option value="Venadillo">Venadillo</option>
+		<option value="Villahermosa">Villahermosa</option>
+		<option value="Villarrica">Villarrica</option>
+		`;
+
+	}else if (departamento === 'Huila1') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Acevedo">Acevedo</option>
+		<option value="Agrado">Agrado</option>
+		<option value="Algeciras">Algeciras</option>
+		<option value="Altamira">Altamira</option>
+		<option value="Baraya">Baraya</option>
+		<option value="Campoalegre">Campoalegre</option>
+		<option value="Colombia">Colombia</option>
+		<option value="Elías">Elías</option>
+		<option value="Garzón">Garzón</option>
+		<option value="Gigante">Gigante</option>
+		<option value="Guadalupe">Guadalupe</option>
+		<option value="Hobo">Hobo</option>
+		<option value="Íquira">Íquira</option>
+		<option value="Isnos">Isnos</option>
+		<option value="La Argentina">La Argentina</option>
+		<option value="La Plata">La Plata</option>
+		<option value="Nátaga">Nátaga</option>
+		<option value="Oporapa">Oporapa</option>
+		<option value="Paicol">Paicol</option>
+		<option value="Palestina">Palestina</option>
+		<option value="Pital">Pital</option>
+		<option value="Pitalito">Pitalito</option>
+		<option value="Saladoblanco">Saladoblanco</option>
+		<option value="San Agustín">San Agustín</option>
+		<option value="Santa María">Santa María</option>
+		<option value="Suaza">Suaza</option>
+		<option value="Tarqui">Tarqui</option>
+		<option value="Tello">Tello</option>
+		<option value="Teruel">Teruel</option>
+		<option value="Tesalia">Tesalia</option>
+		<option value="Timaná">Timaná</option>
+		<option value="Villavieja">Villavieja</option>
+		<option value="Yaguará">Yaguará</option>
+		`;
+
+	} else if (departamento === 'Florencia') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Albania">Albania</option>
+		<option value="Belén de los Andaquíes">Belén de los Andaquíes</option>
+		<option value="Cartagena del Chairá">Cartagena del Chairá</option>
+		<option value="Curillo">Curillo</option>
+		<option value="El Doncello">El Doncello</option>
+		<option value="El Paujil">El Paujil</option>
+		<option value="Florencia">Florencia</option>
+		<option value="La Montañita">La Montañita</option>
+		<option value="Milán">Milán</option>
+		<option value="Morelia">Morelia</option>
+		<option value="Puerto Rico">Puerto Rico</option>
+		<option value="San José del Fragua">San José del Fragua</option>
+		<option value="San Vicente del Caguán">San Vicente del Caguán</option>
+		<option value="Solano">Solano</option>
+		<option value="Solita">Solita</option>
+		<option value="Valparaíso">Valparaíso</option>
+		`;
+
+	} else if (departamento === 'Putumayo') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Colón">Colón</option>
+		<option value="Mocoa">Mocoa</option>
+		<option value="Orito">Orito</option>
+		<option value="Puerto Asís">Puerto Asís</option>
+		<option value="Puerto Caicedo">Puerto Caicedo</option>
+		<option value="Puerto Guzmán">Puerto Guzmán</option>
+		<option value="Puerto Leguízamo">Puerto Leguízamo</option>
+		<option value="San Francisco">San Francisco</option>
+		<option value="San Miguel">San Miguel</option>
+		<option value="Santiago">Santiago</option>
+		<option value="Sibundoy">Sibundoy</option>
+		<option value="Valle del Guamuez">Valle del Guamuez</option>
+		<option value="Villagarzón">Villagarzón</option>
+		`;
+
+	} else if (departamento === 'Risaralda') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Dosquebradas">Dosquebradas</option>
+		<option value="La Virginia">La Virginia</option>
+		<option value="Pereira">Pereira</option>
+		`;
+
+	} else if (departamento === 'Caldas') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Manizales">Manizales</option>
+		<option value="Villamaría">Villamaría</option>
+		`;
+
+	} else if (departamento === 'Risaralda1') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Apía">Apía</option>
+		<option value="Balboa">Balboa</option>
+		<option value="Belén de Umbría">Belén de Umbría</option>
+		<option value="Guática">Guática</option>
+		<option value="La Celia">La Celia</option>
+		<option value="Marsella">Marsella</option>
+		<option value="Mistrató">Mistrató</option>
+		<option value="Pueblo Rico">Pueblo Rico</option>
+		<option value="Quinchía">Quinchía</option>
+		<option value="Santa Rosa de Cabal">Santa Rosa de Cabal</option>
+		<option value="Santuario">Santuario</option>
+		`;
+
+	} else if (departamento === 'Caldas1') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Aguadas">Aguadas</option>
+		<option value="Anserma">Anserma</option>
+		<option value="Aranzazu">Aranzazu</option>
+		<option value="Belalcázar">Belalcázar</option>
+		<option value="Chinchiná">Chinchiná</option>
+		<option value="Filadelfia">Filadelfia</option>
+		<option value="La Dorada">La Dorada</option>
+		<option value="La Merced">La Merced</option>
+		<option value="Manzanares">Manzanares</option>
+		<option value="Marmato">Marmato</option>
+		<option value="Marquetalia">Marquetalia</option>
+		<option value="Marulanda">Marulanda</option>
+		<option value="Neira">Neira</option>
+		<option value="Norcasia">Norcasia</option>
+		<option value="Pácora">Pácora</option>
+		<option value="Palestina">Palestina</option>
+		<option value="Pensilvania">Pensilvania</option>
+		<option value="Riosucio">Riosucio</option>
+		<option value="Risaralda">Risaralda</option>
+		<option value="Salamina">Salamina</option>
+		<option value="Samaná">Samaná</option>
+		<option value="San José">San José</option>
+		<option value="Supía">Supía</option>
+		<option value="Victoria">Victoria</option>
+		<option value="Viterbo">Viterbo</option>
+		`;
+
+	} else if (departamento === 'Quindio') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Armenia">Armenia</option>
+		<option value="Buenavista">Buenavista</option>
+		<option value="Calarcá">Calarcá</option>
+		<option value="Circasia">Circasia</option>
+		<option value="Córdoba">Córdoba</option>
+		<option value="Filandia">Filandia</option>
+		<option value="Génova">Génova</option>
+		<option value="La Tebaida">La Tebaida</option>
+		<option value="Montenegro">Montenegro</option>
+		<option value="Pijao">Pijao</option>
+		<option value="Quimbaya">Quimbaya</option>
+		<option value="Salento">Salento</option>
+		`;
+
+	} else if (departamento === 'Valle del Cauca') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Cali">Cali</option>
+		<option value="Candelaria">Candelaria</option>
+		<option value="Jamundí">Jamundí</option>
+		<option value="La Cumbre">La Cumbre</option>
+		<option value="Vijes">Vijes</option>
+		<option value="Yumbo">Yumbo</option>
+		`;
+
+	} else if (departamento === 'Nariño') {
+            municipio.innerHTML = `
+        <option value=""></option>
+        <option value="Chachagüí">Chachagüí</option>
+		<option value="Nariño">Nariño</option>
+		<option value="Pasto">Pasto</option>
+		<option value="Tangua">Tangua</option>
+		<option value="Yacuanquer">Yacuanquer</option>
+		`;
+
+	} else if (departamento === 'Cauca') {
+            municipio.innerHTML = `
+        <option value=""></option>
+        <option value="Popayán">Popayán</option>
+		<option value="Puracé - Coconuco">Puracé - Coconuco</option>
+		<option value="Sotará">Sotará</option>
+		<option value="Timbío">Timbío</option>
+		`;
+
+	} else if (departamento === 'Valle del Cauca1') {
+            municipio.innerHTML = `
+        <option value=""></option>
+        <option value="Alcalá">Alcalá</option>
+		<option value="Andalucía">Andalucía</option>
+		<option value="Ansermanuevo">Ansermanuevo</option>
+		<option value="Argelia">Argelia</option>
+		<option value="Bolívar">Bolívar</option>
+		<option value="Buenaventura">Buenaventura</option>
+		<option value="Buga">Buga</option>
+		<option value="Bugalagrande">Bugalagrande</option>
+		<option value="Caicedonia">Caicedonia</option>
+		<option value="Calima - El Darién">Calima - El Darién</option>
+		<option value="Cartago">Cartago</option>
+		<option value="Dagua">Dagua</option>
+		<option value="El Águila">El Águila</option>
+		<option value="El Cairo">El Cairo</option>
+		<option value="El Cerrito">El Cerrito</option>
+		<option value="El Dovio">El Dovio</option>
+		<option value="Florida">Florida</option>
+		<option value="Ginebra">Ginebra</option>
+		<option value="Guacarí">Guacarí</option>
+		<option value="La Unión">La Unión</option>
+		<option value="La Victoria">La Victoria</option>
+		<option value="Obando">Obando</option>
+		<option value="Palmira">Palmira</option>
+		<option value="Pradera">Pradera</option>
+		<option value="Restrepo">Restrepo</option>
+		<option value="Riofrío">Riofrío</option>
+		<option value="Roldanillo">Roldanillo</option>
+		<option value="San Pedro">San Pedro</option>
+		<option value="Sevilla">Sevilla</option>
+		<option value="Toro">Toro</option>
+		<option value="Trujillo">Trujillo</option>
+		<option value="Tuluá">Tuluá</option>
+		<option value="Ulloa">Ulloa</option>
+		<option value="Versalles">Versalles</option>
+		<option value="Yotoco">Yotoco</option>
+		<option value="Zarzal">Zarzal</option>
+		`;
+
+	} else if (departamento === 'Nariño1') {
+            municipio.innerHTML = `
+        <option value=""></option>
+        <option value="Albán">Albán</option>
+		<option value="Aldana">Aldana</option>
+		<option value="Ancuya">Ancuya</option>
+		<option value="Arboleda">Arboleda</option>
+		<option value="Barbacoas">Barbacoas</option>
+		<option value="Belén">Belén</option>
+		<option value="Buesaco">Buesaco</option>
+		<option value="Colón">Colón</option>
+		<option value="Consacá">Consacá</option>
+		<option value="Contadero">Contadero</option>
+		<option value="Córdoba">Córdoba</option>
+		<option value="Cuaspud">Cuaspud</option>
+		<option value="Cumbal">Cumbal</option>
+		<option value="Cumbitara">Cumbitara</option>
+		<option value="El Charco">El Charco</option>
+		<option value="El Peñol">El Peñol</option>
+		<option value="El Rosario">El Rosario</option>
+		<option value="El Tablón de Gómez">El Tablón de Gómez</option>
+		<option value="El Tambo">El Tambo</option>
+		<option value="Francisco Pizarro">Francisco Pizarro</option>
+		<option value="Funes">Funes</option>
+		<option value="Guachucal">Guachucal</option>
+		<option value="Guaitarilla">Guaitarilla</option>
+		<option value="Gualmatán">Gualmatán</option>
+		<option value="Iles">Iles</option>
+		<option value="Imués">Imués</option>
+		<option value="Ipiales">Ipiales</option>
+		<option value="La Cruz">La Cruz</option>
+		<option value="La Florida">La Florida</option>
+		<option value="La Llanada">La Llanada</option>
+		<option value="La Tola">La Tola</option>
+		<option value="La Unión">La Unión</option>
+		<option value="Leiva">Leiva</option>
+		<option value="Linares">Linares</option>
+		<option value="Los Andes">Los Andes</option>
+		<option value="Magüí Payán">Magüí Payán</option>
+		<option value="Mallama">Mallama</option>
+		<option value="Mosquera">Mosquera</option>
+		<option value="Olaya Herrera">Olaya Herrera</option>
+		<option value="Ospina">Ospina</option>
+		<option value="Policarpa">Policarpa</option>
+		<option value="Potosí">Potosí</option>
+		<option value="Providencia">Providencia</option>
+		<option value="Puerres">Puerres</option>
+		<option value="Pupiales">Pupiales</option>
+		<option value="Ricaurte">Ricaurte</option>
+		<option value="Roberto Payán">Roberto Payán</option>
+		<option value="Samaniego">Samaniego</option>
+		<option value="San Bernardo">San Bernardo</option>
+		<option value="San Lorenzo">San Lorenzo</option>
+		<option value="San Pablo">San Pablo</option>
+		<option value="San Pedro de Cartago">San Pedro de Cartago</option>
+		<option value="Sandoná">Sandoná</option>
+		<option value="Santa Bárbara">Santa Bárbara</option>
+		<option value="Santacruz">Santacruz</option>
+		<option value="Sapuyes">Sapuyes</option>
+		<option value="Taminango">Taminango</option>
+		<option value="Tumaco">Tumaco</option>
+		<option value="Túquerres">Túquerres</option>
+		`;
+
+	} else if (departamento === 'Cauca1') {
+            municipio.innerHTML = `
+        <option value=""></option>
+      	<option value="Almaguer">Almaguer</option>
+		<option value="Argelia">Argelia</option>
+		<option value="Balboa">Balboa</option>
+		<option value="Bolívar">Bolívar</option>
+		<option value="Buenos Aires">Buenos Aires</option>
+		<option value="Cajibío">Cajibío</option>
+		<option value="Caldono">Caldono</option>
+		<option value="Caloto">Caloto</option>
+		<option value="Corinto">Corinto</option>
+		<option value="El Tambo">El Tambo</option>
+		<option value="Florencia">Florencia</option>
+		<option value="Guachené">Guachené</option>
+		<option value="Guapi">Guapi</option>
+		<option value="Inzá">Inzá</option>
+		<option value="Jambaló">Jambaló</option>
+		<option value="La Sierra">La Sierra</option>
+		<option value="La Vega">La Vega</option>
+		<option value="López de Micay">López de Micay</option>
+		<option value="Mercaderes">Mercaderes</option>
+		<option value="Miranda">Miranda</option>
+		<option value="Morales">Morales</option>
+		<option value="Padilla">Padilla</option>
+		<option value="Páez">Páez</option>
+		<option value="Patía">Patía</option>
+		<option value="Piamonte">Piamonte</option>
+		<option value="Piendamó">Piendamó</option>
+		<option value="Puerto Tejada">Puerto Tejada</option>
+		<option value="Rosas">Rosas</option>
+		<option value="San Sebastián">San Sebastián</option>
+		<option value="Santa Rosa">Santa Rosa</option>
+		<option value="Santander de Quilichao">Santander de Quilichao</option>
+		<option value="Silvia">Silvia</option>
+		<option value="Suárez">Suárez</option>
+		<option value="Sucre">Sucre</option>
+		<option value="Timbiquí">Timbiquí</option>
+		<option value="Toribío">Toribío</option>
+		<option value="Totoró">Totoró</option>
+		<option value="Villa Rica">Villa Rica</option>
+		`;
+
+	} else if (departamento === 'Santander') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Bucaramanga">Bucaramanga</option>
+		<option value="Floridablanca">Floridablanca</option>
+		<option value="Girón">Girón</option>
+		<option value="Lebrija">Lebrija</option>
+		<option value="Los Santos">Los Santos</option>
+		<option value="Piedecuesta">Piedecuesta</option>
+		`;
+
+	} else if (departamento === 'Norte de Santander') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="El Zulia">El Zulia</option>
+		<option value="Los Patios">Los Patios</option>
+		<option value="Puerto Santander">Puerto Santander</option>
+		<option value="San Cayetano">San Cayetano</option>
+		<option value="Villa del Rosario">Villa del Rosario</option>
+		`;
+
+	} else if (departamento === 'Santander1') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Aguada">Aguada</option>
+		<option value="Albania">Albania</option>
+		<option value="Aratoca">Aratoca</option>
+		<option value="Barbosa">Barbosa</option>
+		<option value="Barichara">Barichara</option>
+		<option value="Betulia">Betulia</option>
+		<option value="Bolívar">Bolívar</option>
+		<option value="Cabrera">Cabrera</option>
+		<option value="California">California</option>
+		<option value="Capitanejo">Capitanejo</option>
+		<option value="Carcasí">Carcasí</option>
+		<option value="Cepitá">Cepitá</option>
+		<option value="Cerrito">Cerrito</option>
+		<option value="Charalá">Charalá</option>
+		<option value="Charta">Charta</option>
+		<option value="Chima">Chima</option>
+		<option value="Chipatá">Chipatá</option>
+		<option value="Cimitarra">Cimitarra</option>
+		<option value="Concepción">Concepción</option>
+		<option value="Confines">Confines</option>
+		<option value="Contratación">Contratación</option>
+		<option value="Coromoro">Coromoro</option>
+		<option value="Curití">Curití</option>
+		<option value="El Carmen de Chucurí">El Carmen de Chucurí</option>
+		<option value="El Guacamayo">El Guacamayo</option>
+		<option value="El Peñón">El Peñón</option>
+		<option value="El Playón">El Playón</option>
+		<option value="Encino">Encino</option>
+		<option value="Enciso">Enciso</option>
+		<option value="Florián">Florián</option>
+		<option value="Galán">Galán</option>
+		<option value="Gámbita">Gámbita</option>
+		<option value="Guaca">Guaca</option>
+		<option value="Guadalupe">Guadalupe</option>
+		<option value="Guapotá">Guapotá</option>
+		<option value="Guavatá">Guavatá</option>
+		<option value="Güepsa">Güepsa</option>
+		<option value="Hato">Hato</option>
+		<option value="Jesús María">Jesús María</option>
+		<option value="Jordán">Jordán</option>
+		<option value="La Belleza">La Belleza</option>
+		<option value="La Paz">La Paz</option>
+		<option value="Landázuri">Landázuri</option>
+		<option value="Macaravita">Macaravita</option>
+		<option value="Málaga">Málaga</option>
+		<option value="Matanza">Matanza</option>
+		<option value="Mogotes">Mogotes</option>
+		<option value="Molagavita">Molagavita</option>
+		<option value="Ocamonte">Ocamonte</option>
+		<option value="Oiba">Oiba</option>
+		<option value="Onzaga">Onzaga</option>
+		<option value="Palmar">Palmar</option>
+		<option value="Palmas del Socorro">Palmas del Socorro</option>
+		<option value="Páramo">Páramo</option>
+		<option value="Pinchote">Pinchote</option>
+		<option value="Puente Nacional">Puente Nacional</option>
+		<option value="Puerto Parra">Puerto Parra</option>
+		<option value="Puerto Wilches">Puerto Wilches</option>
+		<option value="Rionegro">Rionegro</option>
+		<option value="Sabana de Torres">Sabana de Torres</option>
+		<option value="San Andrés">San Andrés</option>
+		<option value="San Benito">San Benito</option>
+		<option value="San Gil">San Gil</option>
+		<option value="San Joaquín">San Joaquín</option>
+		<option value="San José de Miranda">San José de Miranda</option>
+		<option value="San Miguel">San Miguel</option>
+		<option value="San Vicente de Chucurí">San Vicente de Chucurí</option>
+		<option value="Santa Bárbara">Santa Bárbara</option>
+		<option value="Santa Helena del Opón">Santa Helena del Opón</option>
+		<option value="Simacota">Simacota</option>
+		<option value="Socorro">Socorro</option>
+		<option value="Suaita">Suaita</option>
+		<option value="Sucre">Sucre</option>
+		<option value="Suratá">Suratá</option>
+		<option value="Tona">Tona</option>
+		<option value="Valle de San José">Valle de San José</option>
+		<option value="Vélez">Vélez</option>
+		<option value="Vetas">Vetas</option>
+		<option value="Villanueva">Villanueva</option>
+		<option value="Zapatoca">Zapatoca</option>
+		`;
+
+	} else if (departamento === 'Norte de Santander1') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Ábrego">Ábrego</option>
+		<option value="Arboledas">Arboledas</option>
+		<option value="Bochalema">Bochalema</option>
+		<option value="Bucarasica">Bucarasica</option>
+		<option value="Cáchira">Cáchira</option>
+		<option value="Cácota">Cácota</option>
+		<option value="Chinácota">Chinácota</option>
+		<option value="Chitagá">Chitagá</option>
+		<option value="Convención">Convención</option>
+		<option value="Cúcuta">Cúcuta</option>
+		<option value="Cucutilla">Cucutilla</option>
+		<option value="Durania">Durania</option>
+		<option value="El Carmen">El Carmen</option>
+		<option value="El Tarra">El Tarra</option>
+		<option value="Gramalote">Gramalote</option>
+		<option value="Hacarí">Hacarí</option>
+		<option value="Herrán">Herrán</option>
+		<option value="La Esperanza">La Esperanza</option>
+		<option value="La Playa de Belén">La Playa de Belén</option>
+		<option value="Labateca">Labateca</option>
+		<option value="Lourdes">Lourdes</option>
+		<option value="Mutiscua">Mutiscua</option>
+		<option value="Ocaña">Ocaña</option>
+		<option value="Pamplona">Pamplona</option>
+		<option value="Pamplonita">Pamplonita</option>
+		<option value="Ragonvalia">Ragonvalia</option>
+		<option value="Salazar de Las Palmas">Salazar de Las Palmas</option>
+		<option value="San Calixto">San Calixto</option>
+		<option value="Santiago">Santiago</option>
+		<option value="Santo Domingo de Silos">Santo Domingo de Silos</option>
+		<option value="Sardinata">Sardinata</option>
+		<option value="Teorama">Teorama</option>
+		<option value="Tibú">Tibú</option>
+		<option value="Toledo">Toledo</option>
+		<option value="Villa Caro">Villa Caro</option>
+		`;
+
+	} else if (departamento === 'Arauca') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Arauca">Arauca</option>
+		<option value="Arauquita">Arauquita</option>
+		<option value="Cravo Norte">Cravo Norte</option>
+		<option value="Cubara">Cubará</option>
+		<option value="Fortul">Fortul</option>
+		<option value="Puerto Rondón">Puerto Rondón</option>
+		<option value="Saravena">Saravena</option>
+		<option value="Tame">Tame</option>
+		`;
+
+	} else if (departamento === 'Santander2') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Barrancabermeja">Barrancabermeja </option>
+		`;
+
+	} else if (departamento === 'Boyaca2') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Puerto Boyacá">Puerto Boyacá</option>
+		`;
+
+	} else if (departamento === 'Antioquia2') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Yondó">Yondó</option>
+		<option value="Puerto Berrio">Puerto Berrio</option>
+		<option value="Puerto Nare">Puerto Nare</option>
+		`;
+
+	} else if (departamento === 'Bolivar2') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Cantagallo">Cantagallo</option>
+		<option value="San Pablo">San Pablo</option>
+		<option value="Morales">Morales</option>
+		<option value="Arenal">Arenal</option>
+		<option value="Santa Rosa del Sur">Santa Rosa del Sur</option>
+		<option value="Simití">Simití</option>
+		`;
+
+	} else if (departamento === 'Antioquia') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Barbosa">Barbosa</option>
+		<option value="Bello">Bello</option>
+		<option value="Caldas">Caldas</option>
+		<option value="Copacabana">Copacabana</option>
+		<option value="Envigado">Envigado</option>
+		<option value="Girardota">Girardota</option>
+		<option value="Itagüí">Itagüí</option>
+		<option value="La Estrella">La Estrella</option>
+		<option value="Medellín">Medellín</option>
+		<option value="Sabaneta">Sabaneta</option>
+		`;
+
+	} else if (departamento === 'Cordoba') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Cereté">Cereté</option>
+		<option value="Ciénaga de Oro">Ciénaga de Oro</option>
+		<option value="Montería">Montería</option>
+		<option value="San Carlos">San Carlos</option>
+		<option value="San Pelayo">San Pelayo</option>
+		`;
+
+	} else if (departamento === 'Antioquia1') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Abejorral">Abejorral</option>
+		<option value="Abriaquí">Abriaquí</option>
+		<option value="Alejandría">Alejandría</option>
+		<option value="Amagá">Amagá</option>
+		<option value="Amalfi">Amalfi</option>
+		<option value="Andes">Andes</option>
+		<option value="Angelópolis">Angelópolis</option>
+		<option value="Angostura">Angostura</option>
+		<option value="Anorí">Anorí</option>
+		<option value="Anzá">Anzá</option>
+		<option value="Argelia">Argelia</option>
+		<option value="Armenia">Armenia</option>
+		<option value="Belmira">Belmira</option>
+		<option value="Betania">Betania</option>
+		<option value="Betulia">Betulia</option>
+		<option value="Briceño">Briceño</option>
+		<option value="Buriticá">Buriticá</option>
+		<option value="Cáceres">Cáceres</option>
+		<option value="Caicedo">Caicedo</option>
+		<option value="Campamento">Campamento</option>
+		<option value="Cañasgordas">Cañasgordas</option>
+		<option value="Caracolí">Caracolí</option>
+		<option value="Caramanta">Caramanta</option>
+		<option value="Carolina del Príncipe">Carolina del Príncipe</option>
+		<option value="Caucasia">Caucasia</option>
+		<option value="Cisneros">Cisneros</option>
+		<option value="Ciudad Bolívar">Ciudad Bolívar</option>
+		<option value="Cocorná">Cocorná</option>
+		<option value="Concepción">Concepción</option>
+		<option value="Concordia">Concordia</option>
+		<option value="Donmatías">Donmatías</option>
+		<option value="Ebéjico">Ebéjico</option>
+		<option value="El Bagre">El Bagre</option>
+		<option value="El Carmen de Viboral">El Carmen de Viboral</option>
+		<option value="El Peñol">El Peñol</option>
+		<option value="El Retiro">El Retiro</option>
+		<option value="El Santuario">El Santuario</option>
+		<option value="Entrerríos">Entrerríos</option>
+		<option value="Fredonia">Fredonia</option>
+		<option value="Frontino">Frontino</option>
+		<option value="Giraldo">Giraldo</option>
+		<option value="Gómez Plata">Gómez Plata</option>
+		<option value="Granada">Granada</option>
+		<option value="Guadalupe">Guadalupe</option>
+		<option value="Guarne">Guarne</option>
+		<option value="Guatapé">Guatapé</option>
+		<option value="Heliconia">Heliconia</option>
+		<option value="Hispania">Hispania</option>
+		<option value="Ituango">Ituango</option>
+		<option value="Jardín">Jardín</option>
+		<option value="Jericó">Jericó</option>
+		<option value="La Ceja">La Ceja</option>
+		<option value="La Pintada">La Pintada</option>
+		<option value="La Unión">La Unión</option>
+		<option value="Liborina">Liborina</option>
+		<option value="Maceo">Maceo</option>
+		<option value="Marinilla">Marinilla</option>
+		<option value="Montebello">Montebello</option>
+		<option value="Nariño">Nariño</option>
+		<option value="Nechí">Nechí</option>
+		<option value="Olaya">Olaya</option>
+		<option value="Peque">Peque</option>
+		<option value="Pueblorrico">Pueblorrico</option>
+		<option value="Puerto Berrío">Puerto Berrío</option>
+		<option value="Puerto Nare">Puerto Nare</option>
+		<option value="Puerto Triunfo">Puerto Triunfo</option>
+		<option value="Remedios">Remedios</option>
+		<option value="Rionegro">Rionegro</option>
+		<option value="Sabanalarga">Sabanalarga</option>
+		<option value="Salgar">Salgar</option>
+		<option value="San Andrés de Cuerquia">San Andrés de Cuerquia</option>
+		<option value="San Carlos">San Carlos</option>
+		<option value="San Francisco">San Francisco</option>
+		<option value="San Jerónimo">San Jerónimo</option>
+		<option value="San José de la Montaña">San José de la Montaña</option>
+		<option value="San Luis">San Luis</option>
+		<option value="San Pedro de los Milagros">San Pedro de los Milagros</option>
+		<option value="San Rafael">San Rafael</option>
+		<option value="San Roque">San Roque</option>
+		<option value="San Vicente Ferrer">San Vicente Ferrer</option>
+		<option value="Santa Bárbara">Santa Bárbara</option>
+		<option value="Santa Fe de Antioquia">Santa Fe de Antioquia</option>
+		<option value="Santa Rosa de Osos">Santa Rosa de Osos</option>
+		<option value="Santo Domingo">Santo Domingo</option>
+		<option value="Segovia">Segovia</option>
+		<option value="Sonsón">Sonsón</option>
+		<option value="Sopetrán">Sopetrán</option>
+		<option value="Támesis">Támesis</option>
+		<option value="Tarazá">Tarazá</option>
+		<option value="Tarso">Tarso</option>
+		<option value="Titiribí">Titiribí</option>
+		<option value="Toledo">Toledo</option>
+		<option value="Uramita">Uramita</option>
+		<option value="Urrao">Urrao</option>
+		<option value="Valdivia">Valdivia</option>
+		<option value="Valparaíso">Valparaíso</option>
+		<option value="Vegachí">Vegachí</option>
+		<option value="Venecia">Venecia</option>
+		<option value="Vigía del Fuerte">Vigía del Fuerte</option>
+		<option value="Yalí">Yalí</option>
+		<option value="Yarumal">Yarumal</option>
+		<option value="Yolombó">Yolombó</option>
+		<option value="Yondó">Yondó</option>
+		<option value="Zaragoza">Zaragoza</option>
+		`;
+
+	} else if (departamento === 'Cordoba1') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Ayapel">Ayapel</option>
+		<option value="Buenavista">Buenavista</option>
+		<option value="Canalete">Canalete</option>
+		<option value="Chimá">Chimá</option>
+		<option value="Chinú">Chinú</option>
+		<option value="Cotorra">Cotorra</option>
+		<option value="La Apartada">La Apartada</option>
+		<option value="Lorica">Lorica</option>
+		<option value="Los Córdobas">Los Córdobas</option>
+		<option value="Momil">Momil</option>
+		<option value="Montelíbano">Montelíbano</option>
+		<option value="Moñitos">Moñitos</option>
+		<option value="Planeta Rica">Planeta Rica</option>
+		<option value="Pueblo Nuevo">Pueblo Nuevo</option>
+		<option value="Puerto Escondido">Puerto Escondido</option>
+		<option value="Puerto Libertador">Puerto Libertador</option>
+		<option value="Purísima">Purísima</option>
+		<option value="Sahagún">Sahagún</option>
+		<option value="San Andrés de Sotavento">San Andrés de Sotavento</option>
+		<option value="San Antero">San Antero</option>
+		<option value="San Bernardo del Viento">San Bernardo del Viento</option>
+		<option value="San José de Uré">San José de Uré</option>
+		<option value="Tierralta">Tierralta</option>
+		<option value="Tuchín">Tuchín</option>
+		<option value="Valencia">Valencia</option>
+		`;
+
+	} else if (departamento === 'Choco') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Andagoya">Andagoya</option>
+		<option value="Bagadó">Bagadó</option>
+		<option value="Bellavista">Bellavista</option>
+		<option value="Beté">Beté</option>
+		<option value="Cértegui">Cértegui</option>
+		<option value="Condoto">Condoto</option>
+		<option value="El Carmen de Atrato">El Carmen de Atrato</option>
+		<option value="Istmina">Istmina</option>
+		<option value="Juradó">Juradó</option>
+		<option value="Las Ánimas">Las Ánimas</option>
+		<option value="Lloró">Lloró</option>
+		<option value="Managrú">Managrú</option>
+		<option value="Mutis">Mutis</option>
+		<option value="Nóvita">Nóvita</option>
+		<option value="Nuquí">Nuquí</option>
+		<option value="Paimadó">Paimadó</option>
+		<option value="Pie de Pató">Pie de Pató</option>
+		<option value="Pizarro">Pizarro</option>
+		<option value="Puerto Meluk">Puerto Meluk</option>
+		<option value="Quibdó">Quibdó</option>
+		<option value="San José del Palmar">San José del Palmar</option>
+		<option value="Santa Genoveva de Docordó">Santa Genoveva de Docordó</option>
+		<option value="Santa Rita">Santa Rita</option>
+		<option value="Sipí">Sipí</option>
+		<option value="Tadó">Tadó</option>
+		<option value="Yuto">Yuto</option>
+		`;
+
+	} else if (departamento === 'Choco1') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Acandí">Acandí</option>
+		<option value="Belén de Bajirá">Belén de Bajirá</option>
+		<option value="El Carmen del Darién">El Carmen del Darién</option>
+		<option value="Riosucio">Riosucio</option>
+		<option value="Unguía">Unguía</option>
+		`;
+
+	} else if (departamento === 'Antioquia3') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Apartadó">Apartadó</option>
+		<option value="Arboletes">Arboletes</option>
+		<option value="Carepa">Carepa</option>
+		<option value="Chigorodó">Chigorodó</option>
+		<option value="Dabeiba">Dabeiba</option>
+		<option value="Murindó">Murindó</option>
+		<option value="Mutatá">Mutatá</option>
+		<option value="Necoclí">Necoclí</option>
+		<option value="San Juan de Urabá">San Juan de Urabá</option>
+		<option value="San Pedro de Urabá">San Pedro de Urabá</option>
+		<option value="Turbo">Turbo</option>
+		`;
+
+	}  else if (departamento === 'Meta') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Acacías">Acacías</option>
+		<option value="Cumaral">Cumaral</option>
+		<option value="Restrepo">Restrepo</option>
+		<option value="Villavicencio">Villavicencio</option>
+		`;
+
+	} else if (departamento === 'Meta1') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Barranca de Upía">Barranca de Upía</option>
+		<option value="Cabuyaro">Cabuyaro</option>
+		<option value="Castilla La Nueva">Castilla La Nueva</option>
+		<option value="Cubarral">Cubarral</option>
+		<option value="El Calvario">El Calvario</option>
+		<option value="El Castillo">El Castillo</option>
+		<option value="El Dorado">El Dorado</option>
+		<option value="Fuente de Oro">Fuente de Oro</option>
+		<option value="Granada">Granada</option>
+		<option value="Guamal">Guamal</option>
+		<option value="La Macarena">La Macarena</option>
+		<option value="Lejanías">Lejanías</option>
+		<option value="Mapiripán">Mapiripán</option>
+		<option value="Mesetas">Mesetas</option>
+		<option value="Puerto Concordia">Puerto Concordia</option>
+		<option value="Puerto Gaitán">Puerto Gaitán</option>
+		<option value="Puerto Lleras">Puerto Lleras</option>
+		<option value="Puerto López">Puerto López</option>
+		<option value="Puerto Rico">Puerto Rico</option>
+		<option value="San Carlos de Guaroa">San Carlos de Guaroa</option>
+		<option value="San Juan de Arama">San Juan de Arama</option>
+		<option value="San Juanito">San Juanito</option>
+		<option value="San Martín">San Martín</option>
+		<option value="Uribe">Uribe</option>
+		<option value="Vista Hermosa">Vista Hermosa</option>
+		`;
+
+	}   else if (departamento === 'Casanare') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Aguazul">Aguazul</option>
+		<option value="Chámeza">Chámeza</option>
+		<option value="Hato Corozal">Hato Corozal</option>
+		<option value="La Salina">La Salina</option>
+		<option value="Maní">Maní</option>
+		<option value="Monterrey">Monterrey</option>
+		<option value="Nunchía">Nunchía</option>
+		<option value="Orocué">Orocué</option>
+		<option value="Paz de Ariporo">Paz de Ariporo</option>
+		<option value="Pore">Pore</option>
+		<option value="Recetor">Recetor</option>
+		<option value="Sabanalarga">Sabanalarga</option>
+		<option value="Sácama">Sácama</option>
+		<option value="San Luis de Palenque">San Luis de Palenque</option>
+		<option value="Támara">Támara</option>
+		<option value="Tauramena">Tauramena</option>
+		<option value="Trinidad">Trinidad</option>
+		<option value="Villanueva">Villanueva</option>
+		<option value="Yopal">Yopal</option>
+		`;
+
+	}  else if (departamento === 'Guaviare') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Calamar">Calamar</option>
+		<option value="El Retorno">El Retorno</option>
+		<option value="Miraflores">Miraflores</option>
+		<option value="San José del Guaviare">San José del Guaviare</option>
+		`;
+
+	}  else if (departamento === 'Guainia') {
+            municipio.innerHTML = `
+        <option value="Barrancominas">Barrancominas</option>
+		<option value="Cacahual">Cacahual</option>
+		<option value="Inírida">Inírida</option>
+		<option value="La Guadalupe">La Guadalupe</option>
+		<option value="Morichal Nuevo">Morichal Nuevo</option>
+		<option value="Pana Pana">Pana Pana</option>
+		<option value="Puerto Colombia">Puerto Colombia</option>
+		<option value="San Felipe">San Felipe</option>
+		`;
+
+	}  else if (departamento === 'Vichada') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Cumaribo">Cumaribo</option>
+		<option value="La Primavera">La Primavera</option>
+		<option value="Puerto Carreño">Puerto Carreño</option>
+		<option value="Santa Rosalía">Santa Rosalía</option>
+		`;
+
+	}  else if (departamento === 'Vaupes') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Carurú">Carurú</option>
+		<option value="Mitú">Mitú</option>
+		<option value="Pacoa">Pacoa</option>
+		<option value="Papunaua">Papunaua</option>
+		<option value="Taraira">Taraira</option>
+		<option value="Yavaraté">Yavaraté</option>
+		`;
+
+	} else if (departamento === 'Atlantico') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Barranquilla">Barranquilla</option>
+		<option value="Galapa">Galapa</option>
+		<option value="Malambo">Malambo</option>
+		<option value="Puerto Colombia">Puerto Colombia</option>
+		<option value="Soledad">Soledad</option>
+		`;
+
+	}else if (departamento === 'Bolivar') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Cartagena de Indias">Cartagena de Indias</option>
+		<option value="Clemencia">Clemencia</option>
+		<option value="Santa Catalina">Santa Catalina</option>
+		<option value="Santa Rosa">Santa Rosa</option>
+		<option value="Turbaco">Turbaco</option>
+		<option value="Turbaná">Turbaná</option>
+		`;
+
+	}else if (departamento === 'Magdalena') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Ciénaga">Ciénaga</option>
+		<option value="Puebloviejo">Puebloviejo</option>
+		<option value="Santa Marta">Santa Marta</option>
+		<option value="Sitionuevo">Sitionuevo</option>
+		`;
+
+	}else if (departamento === 'Cesar') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Agustín Codazzi">Agustín Codazzi</option>
+		<option value="La Paz">La Paz</option>
+		<option value="Manaure">Manaure</option>
+		<option value="Pueblo Bello">Pueblo Bello</option>
+		<option value="San Diego">San Diego</option>
+		<option value="Valledupar">Valledupar</option>
+		`;
+
+	}else if (departamento === 'Atlantico1') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Baranoa">Baranoa</option>
+		<option value="Campo de la Cruz">Campo de la Cruz</option>
+		<option value="Candelaria">Candelaria</option>
+		<option value="Juan de Acosta">Juan de Acosta</option>
+		<option value="Luruaco">Luruaco</option>
+		<option value="Manatí">Manatí</option>
+		<option value="Palmar de Varela">Palmar de Varela</option>
+		<option value="Piojó">Piojó</option>
+		<option value="Polonuevo">Polonuevo</option>
+		<option value="Ponedera">Ponedera</option>
+		<option value="Repelón">Repelón</option>
+		<option value="Sabanagrande">Sabanagrande</option>
+		<option value="Sabanalarga">Sabanalarga</option>
+		<option value="Santa Lucía">Santa Lucía</option>
+		<option value="Santo Tomás">Santo Tomás</option>
+		<option value="Suan">Suan</option>
+		<option value="Tubará">Tubará</option>
+		<option value="Usiacurí">Usiacurí</option>
+		`;
+
+	}else if (departamento === 'Bolivar1') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Achí">Achí</option>
+		<option value="Altos del Rosario">Altos del Rosario</option>
+		<option value="Arjona">Arjona</option>
+		<option value="Arroyohondo">Arroyohondo</option>
+		<option value="Barranco de Loba">Barranco de Loba</option>
+		<option value="Calamar">Calamar</option>
+		<option value="Cicuco">Cicuco</option>
+		<option value="Córdoba">Córdoba</option>
+		<option value="El Carmen de Bolívar">El Carmen de Bolívar</option>
+		<option value="El Guamo">El Guamo</option>
+		<option value="El Peñón">El Peñón</option>
+		<option value="Hatillo de Loba">Hatillo de Loba</option>
+		<option value="Magangué">Magangué</option>
+		<option value="Mahates">Mahates</option>
+		<option value="Margarita">Margarita</option>
+		<option value="María La Baja">María La Baja</option>
+		<option value="Montecristo">Montecristo</option>
+		<option value="Norosí">Norosí</option>
+		<option value="Pinillos">Pinillos</option>
+		<option value="Regidor">Regidor</option>
+		<option value="Río Viejo">Río Viejo</option>
+		<option value="San Cristóbal">San Cristóbal</option>
+		<option value="San Estanislao">San Estanislao</option>
+		<option value="San Fernando">San Fernando</option>
+		<option value="San Jacinto">San Jacinto</option>
+		<option value="San Jacinto del Cauca">San Jacinto del Cauca</option>
+		<option value="San Juan Nepomuceno">San Juan Nepomuceno</option>
+		<option value="San Martín de Loba">San Martín de Loba</option>
+		<option value="Santa Cruz de Mompox">Santa Cruz de Mompox</option>
+		<option value="Soplaviento">Soplaviento</option>
+		<option value="Talaigua Nuevo">Talaigua Nuevo</option>
+		<option value="Tiquisio">Tiquisio</option>
+		<option value="Villanueva">Villanueva</option>
+		<option value="Zambrano">Zambrano</option>
+		`;
+
+	}else if (departamento === 'Magdalena1') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Algarrobo">Algarrobo</option>
+		<option value="Aracataca">Aracataca</option>
+		<option value="Ariguaní">Ariguaní</option>
+		<option value="Cerro de San Antonio">Cerro de San Antonio</option>
+		<option value="Chibolo">Chibolo</option>
+		<option value="Concordia">Concordia</option>
+		<option value="El Banco">El Banco</option>
+		<option value="El Piñón">El Piñón</option>
+		<option value="El Retén">El Retén</option>
+		<option value="Fundación">Fundación</option>
+		<option value="Guamal">Guamal</option>
+		<option value="Nueva Granada">Nueva Granada</option>
+		<option value="Pedraza">Pedraza</option>
+		<option value="Pijiño del Carmen">Pijiño del Carmen</option>
+		<option value="Pinto">Pinto</option>
+		<option value="Pivijay">Pivijay</option>
+		<option value="Plato">Plato</option>
+		<option value="Remolino">Remolino</option>
+		<option value="Sabanas de San Ángel">Sabanas de San Ángel</option>
+		<option value="Salamina">Salamina</option>
+		<option value="San Sebastián de Buenavista">San Sebastián de Buenavista</option>
+		<option value="San Zenón">San Zenón</option>
+		<option value="Santa Ana">Santa Ana</option>
+		<option value="Tenerife">Tenerife</option>
+		<option value="Zapayán">Zapayán</option>
+		<option value="Zona Bananera">Zona Bananera</option>
+		`;
+
+	}else if (departamento === 'La Guajira') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Albania">Albania</option>
+		<option value="Barrancas">Barrancas</option>
+		<option value="Dibulla">Dibulla</option>
+		<option value="Distracción">Distracción</option>
+		<option value="El Molino">El Molino</option>
+		<option value="Fonseca">Fonseca</option>
+		<option value="Hatonuevo">Hatonuevo</option>
+		<option value="La Jagua del Pilar">La Jagua del Pilar</option>
+		<option value="Maicao">Maicao</option>
+		<option value="Manaure">Manaure</option>
+		<option value="Riohacha">Riohacha</option>
+		<option value="San Juan del Cesar">San Juan del Cesar</option>
+		<option value="Uribia">Uribia</option>
+		<option value="Urumita">Urumita</option>
+		<option value="Villanueva">Villanueva</option>
+		`;
+
+	}else if (departamento === 'Sucre') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Buenavista">Buenavista</option>
+		<option value="Caimito">Caimito</option>
+		<option value="Chalán">Chalán</option>
+		<option value="Colosó">Colosó</option>
+		<option value="Corozal">Corozal</option>
+		<option value="Coveñas">Coveñas</option>
+		<option value="El Roble">El Roble</option>
+		<option value="Galeras">Galeras</option>
+		<option value="Guaranda">Guaranda</option>
+		<option value="La Unión">La Unión</option>
+		<option value="Los Palmitos">Los Palmitos</option>
+		<option value="Majagual">Majagual</option>
+		<option value="Morroa">Morroa</option>
+		<option value="Ovejas">Ovejas</option>
+		<option value="Palmito">Palmito</option>
+		<option value="Sampués">Sampués</option>
+		<option value="San Benito Abad">San Benito Abad</option>
+		<option value="San Juan de Betulia">San Juan de Betulia</option>
+		<option value="San Marcos">San Marcos</option>
+		<option value="San Onofre">San Onofre</option>
+		<option value="San Pedro">San Pedro</option>
+		<option value="Santiago de Tolú">Santiago de Tolú</option>
+		<option value="Sincé">Sincé</option>
+		<option value="Sincelejo">Sincelejo</option>
+		<option value="Sucre">Sucre</option>
+		<option value="Toluviejo">Toluviejo</option>
+		`;
+
+	}else if (departamento === 'Cesar1') {
+            municipio.innerHTML = `
+        <option value=""></option>
+		<option value="Aguachica">Aguachica</option>
+		<option value="Astrea">Astrea</option>
+		<option value="Becerril">Becerril</option>
+		<option value="Bosconia">Bosconia</option>
+		<option value="Chimichagua">Chimichagua</option>
+		<option value="Chiriguaná">Chiriguaná</option>
+		<option value="Curumaní">Curumaní</option>
+		<option value="El Copey">El Copey</option>
+		<option value="El Paso">El Paso</option>
+		<option value="Gamarra">Gamarra</option>
+		<option value="González">González</option>
+		<option value="La Gloria">La Gloria</option>
+		<option value="La Jagua de Ibirico">La Jagua de Ibirico</option>
+		<option value="Pailitas">Pailitas</option>
+		<option value="Pelaya">Pelaya</option>
+		<option value="Río de Oro">Río de Oro</option>
+		<option value="San Alberto">San Alberto</option>
+		<option value="San Martín">San Martín</option>
+		<option value="Tamalameque">Tamalameque</option>
+		`;
+
+	}
+}
+  // Actualiza las Acción según el tipo de acción seleccionada
+    function actualizarAccion() {
+        const tipoAccion = document.getElementById('tipoAccion').value;
+        const Accion = document.getElementById('Accion');
+
+        Accion.innerHTML = ''; // Limpiar las opciones anteriores
+
+        if (tipoAccion === 'Criminalidad') {
+            Accion.innerHTML = `
+        <option value=""></option>            
+		<option value="Contra la vida">Contra la Vida</option>
+        <option value="Contra la seguridad Pública">Contra la Seguridad Pública</option>
+        <option value="Contra la libertad y otras garantías">Contra la Libertad y Otras Garantías Constitucionales</option>
+        <option value="Contra el patrimonio económico">Contra el Patrimonio Económico</option>
+            `;
+        } else if (tipoAccion === 'Operatividad') {
+            Accion.innerHTML = `
+        <option value=""></option>        
+        <option value="Capturas o aprehensiones">Capturas o aprehensiones</option>
+		<option value="Hallazgos">Hallazgos</option>
+		<option value="Rescates">Rescates</option>
+		<option value="Desmovilizados">Desmovilizados</option>
+             `;
+        }
+}
+
+
+// Actualiza las Acción según el tipo de acción seleccionada
+    function actualizarsubAccion() {
+        const Accion = document.getElementById('Accion').value;
+        const subAccion = document.getElementById('subAccion');
+
+        subAccion.innerHTML = ''; // Limpiar las opciones anteriores
+
+	if (Accion === 'Contra la vida') {
+            subAccion.innerHTML = `
+			<option value=""></option>                
+			<option value="Homicidio">Homicidio</option>
+            <option value="Homicidios connotados">Homicidios Connotados</option>
+            <option value="Homicidios colectivos">Homicidios Colectivos</option>
+            <option value="Tentativa de homicidio">Tentativa de Homicidio</option>
+            <option value="Desplazamiento forzado">Desplazamiento Forzado</option>
+            `;
+        } else if (Accion === 'Contra la seguridad Pública') {
+            subAccion.innerHTML = `
+	    	<option value=""></option>   
+            <option value="Acciones terroristas">Acciones Terroristas</option>
+            <option value="Acciones grupos armados">Acciones de Grupos Armados Organizados</option>
+            <option value="Neutralizacion explosivos">Neutralización de Explosivos</option>
+			<option value="Confrontaciones entre Grupos Armados Organizados">Confrontaciones entre Grupos Armados Organizados</option>
+		`;
+	} else if (Accion === 'Contra la libertad y otras garantías') {
+            subAccion.innerHTML = `
+			<option value=""></option>            
+			<option value="Secuestro / retencion ilegal">Secuestro - Retención Ilegal</option>
+            <option value="Liberacion de secuestrados">Liberación de Secuestrados</option>
+            <option value="Reclutamiento Forzado">Reclutamiento Forzado</option>
+            <option value="Proselitismo">Proselitismo</option>
+		`;
+	} else if (Accion === 'Contra el patrimonio económico') {
+            subAccion.innerHTML = `
+			<option value=""></option>            
+			<option value="Hurto a entidades">Hurto a entidades</option>
+			<option value="Hurto a automotores">Hurto a automotores</option>
+			<option value="Hurto material de guerra">Hurto material de guerra</option>
+			<option value="Asonada - Motines">Asonada - Motines</option>
+			<option value="Extorsiones">Extorsiones</option>
+			`;
+	} else if (Accion === 'Capturas o aprehensiones') {
+            subAccion.innerHTML = `
+			<option value=""></option>   
+			<option value="Captura">Captura</option>
+			<option value="Aprehensión">Aprehensión</option>
+			`;
+	} else if (Accion === 'Hallazgos') {
+            subAccion.innerHTML = `
+			<option value=""></option>   
+			<option value="Material de guerra">Material de guerra</option>
+    	    <option value="Material de intendencia">Material de intendencia</option>
+			<option value="Material electrónico">Material electrónico</option>
+			<option value="Explosivos">Explosivos</option>
+			`;
+	} else if (Accion === 'Rescates') {
+            subAccion.innerHTML = `
+	   		<option value=""></option> 
+            <option value="Secuestrados - retenidos ilegalmente">Secuestrados - Retenidos ilegalmente</option>
+		`;
+	} else if (Accion === 'Desmovilizados') {
+            subAccion.innerHTML = `
+	    <option value=""></option> 
+            <option value="sometido">Sometimiento a la justicia</option>
+            <option value="desvinculado">Desvinculado</option>
+		`;
+	}
+}
+
+	// Actualiza víctimas según el tipo de acción seleccionada
+		function actualizarVictima() {
+			const subAccion = document.getElementById('subAccion').value;
+			const victima = document.getElementById('victima');
+
+			victima.innerHTML = ''; // Limpiar las opciones anteriores
+
+		if (subAccion === 'Homicidio') {
+				victima.innerHTML = `
+				<option value=""></option>                
+				<option value="Particulares">Particulares</option>
+				`;
+			}  else if (subAccion  === 'Homicidios connotados') {
+				victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Particulares">Particulares</option>
+				<option value="Líder social">Líder social</option>
+				<option value="PPR">Persona en proceso de reincorporación</option>
+				<option value="FFMM">FFMM</option>
+				<option value="Policía Nacional">PONAL</option>
+				<option value="Funcionarios Públicos">Funcionarios públicos</option>
+				<option value="Menores de edad">Menores de edad</option>
+				`;
+		}  else if (subAccion  === 'Homicidios colectivos') {
+				victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Particulares">Particulares</option>
+				<option value="Particulares - lider_social">Particulares - líder social</option>
+				<option value="Particulares - ppr">Particulares - PPR</option>
+				`;
+	}  else if (subAccion  === 'Tentativa de homicidio') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Particulares">Particular</option>
+				<option value="Líder social">Líder social</option>
+				<option value="PPR">Persona en proceso de reincorporación</option>
+				<option value="Funcionarios Públicos">Funcionarios públicos</option>
+				<option value="Menores de edad">Menores de edad</option>
+				`;
+	}  else if (subAccion  === 'Desplazamiento forzado') {
+            victima.innerHTML = `
+	    		<option value=""></option> 
+           		<option value="Despl. Particulares">Particular</option>
+				<option value="Despl. Líder social">Líder social</option>
+				<option value="Despl. PPR">Persona en proceso de reincorporación</option>
+				<option value="Despl. Funcionarios Públicos">Funcionarios públicos</option>
+				<option value="Despl. Menores de edad">Menores de edad</option>
+				`;
+	}   else if (subAccion  === 'Acciones terroristas') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Población civil.">Población civil</option>
+				<option value="Policia Nacional">Policía Nacional</option>
+				<option value="Ejercito Nacional">Ejército Nacional</option>
+				<option value="Armada Nacional">Armada Nacional</option>
+				<option value="Fuerza Aérea">Fuerza Aérea</option>
+				<option value="Inpec">INPEC</option>
+				<option value="Población Civil - Policía Nacional">Población Civil - Policía Nacional</option>
+				<option value="Población Civil - Ejército Nacional">Población Civil - Ejército Nacional</option>
+				<option value="Población Civil - Armada Nacional">Población Civil - Armada Nacional</option>
+				<option value="Población Civil - Fuerza Aérea">Población Civil - Fuerza Aérea</option>
+				<option value="Población Civil - INPEC">Población Civil - INPEC</option>
+		`;
+	}   else if (subAccion  === 'Acciones grupos armados') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Incursiones">Incursiones</option>
+				<option value="Instigaciones">Instigaciones</option>
+				<option value="Hostigamientos">Hostigamientos</option>
+				<option value="Emboscados">Emboscados</option>
+				<option value="Retenes ilegales">Retenes ilegales</option>
+				<option value="Atentado contra FFMM">Atentado contra FFMM</option>
+				<option value="Atentado contra Policía">Atentado contra Policía</option>
+				<option value="Atentado contra Población">Atentado contra Población Civil</option>
+				<option value="Atentado contra embarcaciones">Atentado contra embarcaciones</option>
+				<option value="Atentado contra aeronaves">Atentado contra aeronaves</option>
+				<option value="Atentado contra vehículos">Atentado contra vehículos</option>
+				<option value="Atentado contra establecimientos comerciales">Atentado contra establecimientos comerciales</option>
+				<option value="Bloqueo de vías">Bloqueo de vías</option>
+				<option value="Paro armado">Paro armado</option>
+				`;
+	}   else if (subAccion  === 'Neutralizacion explosivos') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Artefacto Explosivo">Artefacto Explosivo</option>
+				<option value="Artefacto Explosivo improvisado">Artefacto Explosivo improvisado</option>
+				<option value="Mina anti persona">Mina anti persona</option>
+				`;
+	}  	else if (subAccion  === 'Confrontaciones entre Grupos Armados Organizados') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Sect. Urbano">Sector Urbano</option>
+				<option value="Sect. Rural">Sector Rural</option>
+				`;
+	}    
+	else if (subAccion  === 'Secuestro / retencion ilegal') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Particulares_">Particulares</option>
+				<option value="Funcionarios públicos_">Funcionarios Públicos</option>
+				<option value="Lider social_">Líder Social</option>
+				<option value="ppr_">PPR</option>
+				<option value="Menores de edad_">Menores de Edad</option>
+				<option value="ffmm_">FFMM</option>
+				<option value="Policía Nal.">Policía Nacional</option>
+		`;
+	}    else if (subAccion  === 'Liberacion de secuestrados') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Liberación de Particulares">Particulares</option>
+				<option value="Liberación de funcionarios públicos">Funcionarios Públicos</option>
+				<option value="Liberación de líder social">Líder Social</option>
+				<option value="Liberación de ppr">PPR</option>
+				<option value="Liberación de menores de edad">Menores de Edad</option>
+				<option value="Liberación de ffmm">FFMM</option>
+				<option value="Liberación de policía">PONAL</option>
+				`;
+	}    else if (subAccion  === 'Reclutamiento Forzado') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Reclutamiento de particulares">Particular</option>
+				<option value="Reclutamiento de ppr">PPR</option>
+				<option value="Reclutamiento de menores de edad">Menores de Edad</option>	
+				`;
+	}    else if (subAccion  === 'Proselitismo') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Pancartas">Pancartas</option>
+				<option value="Panfletos">Panfletos</option>
+				<option value="Pasa calles">Pasa Calles</option>
+				<option value="Panfletos a través de redes sociales">Panfletos a través de Redes Sociales</option>
+				<option value="Afianzamiento Comunidad (Vías, colegios, regalos)">Afianzamiento Comunidad (Vías, colegios, regalos)</option>
+				<option value="Actividad Propagandística">Actividad Propagandística</option>
+				<option value="Presencia Armada">Presencia Armada</option>
+		`;
+	}    else if (subAccion  === 'Hurto a entidades') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Bancos">Bancos</option>
+				<option value="Sector Comercio">Sector Comercio</option>
+		`;
+	}    else if (subAccion  === 'Hurto a automotores') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Vehículos">Vehículos</option>
+				<option value="Motocicletas">Motocicletas</option>
+				<option value="Aeronaves">Aeronaves</option>
+				<option value="Vehiculos fluviales">Vehículos Fluviales</option>
+		`;
+	}    else if (subAccion  === 'Hurto material de guerra') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Armas Largas">Armas Largas</option>
+				<option value="Armas Cortas">Armas Cortas</option>
+				<option value="Munición">Munición</option>
+				<option value="Cargadores">Cargadores</option>
+				<option value="Explosivos">Explosivos</option>
+				<option value="Chalecos balísticos">Chalecos Balísticos</option>
+		`;
+	}    else if (subAccion  === 'Asonada - Motines') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Contra la fuerza pública">Contra Fuerza Pública</option>
+		`;
+	} else if (subAccion  === 'Extorsiones') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Directa">Directa</option>
+				<option value="Indirecta">Indirecta</option>
+		`;
+	} else if (subAccion  === 'Captura') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Por Orden judicial">Por Orden Judicial</option>
+				<option value="En flagrancia">Flagrancia</option>
+		`;
+	}    else if (subAccion  === 'Aprehensión') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="En flagrancia">Flagrancia</option>
+		`;
+	}    else if (subAccion  === 'Material de guerra') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Operativos">Operativo</option>
+				<option value="Actividades diarias">Actividades Diarias</option>
+		`;
+	}    else if (subAccion  === 'Material de intendencia') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Operativos">Operativo</option>
+				<option value="Actividades diarias">Actividades Diarias</option>
+			`;
+	}    else if (subAccion  === 'Material electrónico') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Operativos">Operativo</option>
+				<option value="Actividades diarias">Actividades Diarias</option>
+			`;
+	}    else if (subAccion  === 'Explosivos') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Operativos">Operativo</option>
+				<option value="Actividades diarias">Actividades Diarias</option>
+			`;
+	}    else if (subAccion  === 'Secuestrados - retenidos ilegalmente') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Rescate de particulares">Particulares</option>
+				<option value="Rescate de funcionarios públicos">Funcionarios Públicos</option>
+				<option value="Rescate de lider_social">Líder Social</option>
+				<option value="Rescate de ppr">PPR</option>
+				<option value="Rescate de menores de edad">Menores de Edad</option>
+				<option value="Rescate de ffmm">FFMM</option>
+				<option value="Rescate de Policía">PONAL</option>
+		`;
+	}  else if (subAccion  === 'sometido') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="Mayor de edad">Mayor de edad</option>
+	   	`;
+	}   else if (subAccion  === 'desvinculado') {
+            victima.innerHTML = `
+				<option value=""></option> 
+				<option value="menor de 10 años">Menor de 10 años</option>
+				<option value="11 Años">11 Años</option>
+				<option value="12 Años">12 Años</option>
+				<option value="13 Años">13 Años</option>
+				<option value="14 Años">14 Años</option>
+				<option value="15 Años">15 Años</option>
+				<option value="16 Años">16 Años</option>
+				<option value="17 Años">17 Años</option>
+		`;
+	}
+}
+
+// Actualiza modalidad según victima seleccionada
+    function actualizarModalidad() {
+        const victima = document.getElementById('victima').value;
+        const modalidad = document.getElementById('modalidad');
+
+        modalidad.innerHTML = ''; // Limpiar las opciones anteriores
+
+	if (['Particulares', 'Líder social', 'PPR', 'FFMM', 'Policía Nacional', 'Funcionarios Públicos', 
+	'Menores de edad', 'Particulares - lider_social', 'Particulares - ppr'].includes(victima))
+	 { modalidad.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Arma de fuego">Arma de Fuego</option>
+	    <option value="Elemento contundente">Elemento Contundente</option>
+	    <option value="Elemento cortopunzante">Elemento Cortopunzante</option>
+	    <option value="Explosivos">Explosivos</option>
+	    <option value="Otros">Otros</option>
+            `;  
+	}   if (['Despl. Particulares', 'Despl. Líder social', 'Despl. PPR', 'Despl. Funcionarios Públicos', 'Despl. Menores de edad'].includes(victima))
+	 { modalidad.innerHTML = `
+	    <option value=""></option>             
+	    <option value="confrontaciones">Confrontaciones</option>
+	    <option value="amenazas">Amenazas</option>
+		`;
+	
+	}   if (['Población civil.', 'Policia Nacional', 'Ejercito Nacional', 'Armada Nacional', 'Fuerza Aérea', 'Inpec', 'Población Civil - Policía Nacional',
+		'Población Civil - Ejército Nacional', 'Población Civil - Armada Nacional', 'Población Civil - Fuerza Aérea', 'Población Civil - INPEC'].includes(victima))
+	 { modalidad.innerHTML = `
+	    <option value=""></option>             
+	    <option value="Activación de Artefactos Explosivos">Activación de Artefactos Explosivos</option>
+	    <option value="Moto Bomba">Moto Bomba</option>
+	    <option value="Carro Bomba">Carro Bomba</option>
+	    <option value="Incineración de Automotores">Incineración de Automotores</option>
+	    <option value="Lanzamiento de Explosivos">Lanzamiento de Explosivos</option>
+		`;
+	}   if (['Incursiones', 'Hostigamientos', 'Atentado contra FFMM', 'Atentado contra Policía', 'Atentado contra Población', 'Atentado contra embarcaciones', 
+	'Atentado contra aeronaves', 'Atentado contra vehículos', 'Atentado contra establecimientos comerciales', ].includes(victima))
+	 { modalidad.innerHTML = `
+	    <option value=""></option>             
+	    <option value="Rafagas con arma de fuego">Ráfagas Arma de Fuego</option>
+	    <option value="Lanzamiento de explosivos">Lanzamiento de Explosivos</option>
+	    <option value="Lanzamiento de explosivos con rampa">Lanzamiento de Explosivos a través de Rampa</option>
+	    <option value="Lanzamiento de explosivos con dron">Lanzamiento de Explosivos a través de Dron</option>
+	    `;
+	} else if (victima  === 'Instigaciones') {
+            modalidad.innerHTML = `
+	    <option value=""></option>             
+	    <option value="Movimiento de la comunidad">Movimiento de la comunidad</option>
+	    <option value="Retenciones por la comunidad">Retenciones por la comunidad</option>
+	    <option value="Bloqueos por la comunidad">Bloqueos por la comunidad</option>
+		`;
+	} else if (victima  === 'Emboscados') {
+            modalidad.innerHTML = `
+	    <option value=""></option>             
+	    <option value="Rafagas con arma de fuego">Ráfagas Arma de Fuego</option>
+	    <option value="Explosivos (AEI, Tatucos)">Lanzamiento de Explosivos (AEI, Tatucos)</option>
+	    <option value="Campos preparados">Campos preparados</option>
+	    `;
+	} else if (victima  === 'Retenes ilegales') {
+            modalidad.innerHTML = `
+	    <option value=""></option>             
+	    <option value="Zona urbana">Zona urbana</option>
+	    <option value="Zona rural">Zona rural</option>
+	    <option value="Vía terciaria">Vía terciaria</option>
+	    <option value="Vía principal">Vía principal</option>
+	    <option value="Vía Secundaria">Vía Secundaria</option>
+		`;
+	} else if (victima  === 'Bloqueo de vías') {
+            modalidad.innerHTML = `
+	    <option value=""></option>             
+	    <option value="Con AEI">Con AEI</option>
+	    <option value="Con vehículos">Con vehículos</option>
+	    <option value="Con vehículos acondicionados">Con vehículos acondicionados</option>
+	    <option value="Con banderas - pasacalles">Con banderas - pasacalles</option>
+	   	`;	
+	} else if (victima  === 'Paro armado') {
+            modalidad.innerHTML = `
+	    <option value=""></option>             
+	    <option value="Sector urbano">Sector urbano</option>
+	    <option value="Sector rural">Sector rural</option>
+	    <option value="Sector urbano y rural">Sector urbano y rural</option>
+		`;
+	}   if (['Artefacto Explosivo', 'Artefacto Explosivo improvisado', 'Mina anti persona'].includes(victima))
+	 { modalidad.innerHTML = `
+	    <option value=""></option>             
+	    <option value="Desactivación">Desactivación</option>
+	    <option value="Destrucción">Destrucción</option>
+		`;
+	}   if (['Particulares_', 'Funcionarios públicos_', 'Lider social_', 'ppr_', 'Menores de edad_', 'ffmm_', 'Policía Nal.'].includes(victima))
+	 { modalidad.innerHTML = `	
+	    <option value=""></option>             
+	    <option value="Con fines económicos">Con Fines Económicos</option>
+	    <option value="Temporal">Temporal</option>
+		`;
+	}   if (['Liberación de Particulares', 'Liberación de funcionarios públicos', 'Liberación de líder social', 'Liberación de ppr', 
+	'Liberación de menores de edad', '="Liberación de ffmm', 'Liberación de policía'].includes(victima))
+	 { modalidad.innerHTML = `		      
+	    <option value=""></option>     
+		<option value="A través de Misión Humanitaria Nacional">Misión Humanitaria Nacional</option>
+	    <option value="A través de Misión Humanitaria Internacional">Misión Humanitaria Internacional</option>
+	    <option value="A través de los Mecanismos">A través de los Mecanismos</option>
+	    <option value="Decisión de la organización">Decisión de la Organización</option>
+	    <option value="Diálogo socio político">Diálogo Socio-Político</option>
+	    <option value="Intervencion de la iglesia">Intervención de la Iglesia</option>
+	    <option value="Intervencion de la defensoría">Intervención de la Defensoría</option>
+	    <option value="Intervencion de la iglesia y la defensoría">Intervención de Iglesia y Defensoría</option>
+		`;
+	}   if (['Reclutamiento de particulares', 'Reclutamiento de ppr', 'Reclutamiento de menores de edad'].includes(victima))
+	 { modalidad.innerHTML = `	
+	    <option value=""></option> 
+	    <option value="Bajo Amenazas">Bajo Amenazas</option>            
+		`;
+	} if (['Sect. Urbano', 'Sect. Rural'].includes(victima))
+	 { modalidad.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Empleo de Armas de fuego">Empleo de Armas de fuego</option>
+	    <option value="Empleo de Explosivos">Empleo de Explosivos</option>
+	    <option value="Empleo de Armas de fuego y Explosivos">Mensajes a la Comunidad</option> 
+		`;
+     }
+	if (['Pancartas', 'Panfletos', 'Pasa calles', 'Panfletos a través de redes sociales', 'Afianzamiento Comunidad (Vías, colegios, regalos)',
+	'Actividad Propagandística'	].includes(victima))
+	 { modalidad.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Amenazas">Amenazas</option>
+	    <option value="Citaciones">Citaciones</option>
+	    <option value="Mensajes a la comunidad">Mensajes a la Comunidad</option>
+	    <option value="Actividad con la comunidad">Actividad en la Comunidad</option>
+	    <option value="Control Territorial">Control Territorial</option>  
+		`;
+     }   else if (victima  === 'Presencia Armada') {
+            modalidad.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Casco Urbano">Casco Urbano</option>
+	    <option value="Casco Rural">Casco Rural</option>
+	    `;
+     }   else if (victima  === 'Bancos') {
+            modalidad.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Taquillazo">Taquillazo</option>
+	    <option value="Atraco">Atraco</option>
+		`;
+     }   else if (victima  === 'Sector Comercio') {
+            modalidad.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Atraco">Atraco</option>
+		`;
+	}   if (['Vehículos', 'Motocicletas', 'Aeronaves', 'Vehiculos fluviales'].includes(victima))
+	 { modalidad.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Atraco">Atraco</option>
+	    <option value="Halado">Halado</option>
+		`;
+    }   if (['Armas Largas', 'Armas Cortas', 'Munición', 'Cargadores', 'Explosivos', 'Chalecos balísticos'].includes(victima))
+	 { modalidad.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Atraco">Atraco</option>
+		<option value="Confrontaciones">Confrontaciones</option>
+		`;   
+     }   else if (victima  === 'Contra la fuerza pública') {
+            modalidad.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Retencion">Retención</option>
+	    <option value="Obstruccion en los desplazamientos">Obstrucción en los Desplazamientos</option>
+		`;
+     }  else if (victima  === 'Por Orden judicial') {
+            modalidad.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Por parte de la Policía Nacional">Policía Nacional</option>
+	    <option value="Por parte del cti">CTI</option>
+	    <option value="En conjunto">En Conjunto</option>
+		`;
+     }  else if (victima  === 'En flagrancia') {
+            modalidad.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Por la Policia_nacional">Policía Nacional</option>
+	    <option value="otras entidades - particulares">Otros</option>
+		`;
+     } else if (victima  === 'Operativos') {
+            modalidad.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Ejecutado por la Policía Nacional">Policía Nacional</option>
+	    <option value="Ejecutado por las ffmm">FFMM</option>
+	    <option value="Ejecutado por el cti">CTI</option>
+	    <option value="Ejecutado por en conjunto">En Conjunto</option>
+		`;
+     } else if (victima  === 'Actividades diarias') {
+            modalidad.innerHTML = `
+	    <option value=""></option> 
+	    <option value="de la Policia Nacional">Policía Nacional</option>
+	    <option value="de las FFMM">FFMM</option>
+	    	`;
+	}   if (['Rescate de particulares', 'Rescate de funcionarios públicos', 'Rescate de lider_social', 'Rescate de ppr', 
+	'Rescate de menores de edad', 'Rescate de ffmm', 'Rescate de Policía'].includes(victima))
+	 { modalidad.innerHTML = `          
+	    <option value=""></option>   
+		<option value="mediante Operación policial">Operación Policial</option>
+	    <option value="mediante Operación militar">Operación Militar</option>
+	    <option value="mediante una operación conjunta">Operación Conjunta</option>
+		`;
+	}   if (['Mayor de edad', 'menor de 10 años', '11 Años', '12 Años', '13 Años', '14 Años', '15 Años', '16 Años', '17 Años'].includes(victima))
+	 { modalidad.innerHTML = `   
+	    <option value=""></option>             
+	    <option value="Lo realiza ante Instalaciones policiales">Se desmoviliza en Instalaciones Policiales</option>
+	    <option value="Lo realiza ante instalaciones militares">Se desmoviliza en Instalaciones Militares</option>
+		`;
+	} else if (victima  === 'Directa') {
+		modalidad.innerHTML = `
+				<option value=""></option> 
+				<option value="Menor Cuantia (vacunas)">Menor Cuantía (vacunas)</option>
+				<option value="Exigecnia Unica">Exigencia única</option>
+				<option value="Devolución bienes">Devolución bienes</option>
+		`;
+	} else if (victima  === 'Indirecta') {
+            modalidad.innerHTML = `
+				<option value=""></option> 
+				<option value="A través de WhatsApp">A través de WhatsApp</option>
+				<option value="A través de redes sociales">A través de redes sociales</option>
+				<option value="A través de panfletos">A través de panfletos</option>
+		`;
+	}
+}
+
+
+// actualizar grupos 
+
+function actualizarBloque() {
+        const grupoIlegal1 = document.getElementById('grupoIlegal1').value;
+        const bloque1 = document.getElementById('bloque1');
+const otroBloqueInput = document.getElementById('otroBloqueInput');
+
+        bloque1.innerHTML = ''; // Limpiar las opciones anteriores
+otroBloqueInput.style.display = 'none'; // Ocultar el campo de texto
+
+	if (grupoIlegal1 === 'EMC') {
+            bloque1.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Comando Conjunto De Oriente">Comando Conjunto De Oriente</option>
+	    <option value="Bloque Central Isaías Pardo">Bloque Central Isaías Pardo</option>
+	    <option value="Bloque Occidental Jacobo Arenas">Bloque Occidental Jacobo Arenas</option>
+	    <option value="Bloque Amazonas Manuel Marulanda Vélez">Bloque Amazonas Manuel Marulanda Vélez</option>
+            `;
+        }  else if (grupoIlegal1 === 'EMB') {
+            bloque1.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Comandante Jorge Suárez Briceño">Bloque "Comandante Jorge Suárez Briceño"</option>
+	    <option value="Comandante Gentil Duarte">Bloque Magdalena Medio "Comandante Gentil Duarte"</option>
+	    <option value="Comandante Raúl Reyes">Frente "Comandante Raúl Reyes"</option>
+            `;
+        }  else if (grupoIlegal1 === 'ELN') {
+            bloque1.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Frente de guerra Oriental Manuel Vásquez Castaño">Frente de guerra Oriental Manuel Vásquez Castaño</option>
+	    <option value="Frente de guerra Nororiental Manuel Pérez Martínez">Frente de guerra Nororiental Manuel Pérez Martínez</option>
+	    <option value="Frente de guerra Occidental Omar Gómez">Frente de guerra Occidental Omar Gómez</option>
+	    <option value="Frente de guerra Urbano Nacional Camilo Torres Restrepo">Frente de guerra Urbano Nacional Camilo Torres Restrepo</option>
+ 	    <option value="Frente de guerra Jesús Darío Ramírez Castro">Frente de guerra Jesús Darío Ramírez Castro</option>
+ 	    <option value="Frente de guerra Sur Occidental José Manuel Martínez Quiroz">Frente de guerra Sur Occidental José Manuel Martínez Quiroz</option>
+            `;
+        }   else if (grupoIlegal1 === 'CS') {
+            bloque1.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Sur Occidental">Sur Occidental</option>
+	    `;
+        }   else if (grupoIlegal1 === '2M') {
+            bloque1.innerHTML = `
+	    <option value=""></option>    
+	    <option value="Otro Bloque/Estructura">Otro Bloque/Estructura</option>            
+	    `;
+        }   else if (grupoIlegal1 === 'CNEB') {
+            bloque1.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Otro Bloque/Estructura">Otro Bloque/Estructura</option>
+	    `;
+        }  else if (grupoIlegal1 === 'AGC') {
+            bloque1.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Otro Bloque/Estructura">Otro Bloque/Estructura</option>
+	    `;
+        }  else if (grupoIlegal1 === 'ACSN') {
+            bloque1.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Otro Bloque/Estructura">Otro Bloque/Estructura</option>
+	    `;
+        }  else if (grupoIlegal1 === 'GDCO') {
+            bloque1.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Otro Bloque/Estructura">Otro Bloque/Estructura</option>
+	    `;
+        }  else if (grupoIlegal1 === 'GDO') {
+            bloque1.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Otro Bloque/Estructura">Otro Bloque/Estructura</option>
+	    `;
+        }  else if (grupoIlegal1 === 'Por establecer') {
+            bloque1.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Por establecer">Por Establecer</option>               
+	    `;
+        } 
+}
+	
+	function mostrarOtroBloque() {
+    const bloque1 = document.getElementById('bloque1').value;
+    const otroBloqueInput = document.getElementById('otroBloqueInput');
+
+    if (bloque1 === 'Otro Bloque/Estructura') {
+        otroBloqueInput.style.display = 'block';
+    } else {
+        otroBloqueInput.style.display = 'none';
+    }
+}
+
+
+// actualizar Frente 
+
+	function actualizarFrente() {
+        const bloque1 = document.getElementById('bloque1').value;
+        const frente1 = document.getElementById('frente1');
+const otroFrenteInput = document.getElementById('otroFrenteInput');
+
+        frente1.innerHTML = ''; // Limpiar las opciones anteriores
+otroFrenteInput.style.display = 'none'; // Ocultar el campo de texto
+
+	if (bloque1 === 'Comandante Jorge Suárez Briceño') {
+            frente1.innerHTML = `
+	    <option value=""></option>    
+            <option value="Frente Gaitán Gutiérrez">Frente "Gaitán Gutiérrez"</option>
+	    <option value="Frente Marco Aurelio Buendía">Frente "Marco Aurelio Buendía"</option>
+	    <option value="Frente Evert Castro">Frente "Evert Castro"</option>
+	    <option value="Frente Arturo Ruíz">Frente "Arturo Ruíz"</option>
+	    <option value="Frente Iván Díaz">Frente "Iván Díaz"</option>
+	    <option value="Frente Rodrigo Cadete">Frente "Rodrigo Cadete"</option>
+	    <option value="Frente Darío Gutiérrez">Frente "Darío Gutiérrez"</option>
+	    <option value="Frente Jhon Linares">Frente "Jhon Linares"</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+            `;
+	}   else if (bloque1 === 'Comandante Gentil Duarte') {
+            frente1.innerHTML = `
+	    <option value=""></option>             
+	    <option value="Frente IV">Frente IV</option>
+	    <option value="Frente 18">Frente 18</option>
+	    <option value="Frente 36">Frente 36</option>
+	    <option value="Frente 24">Frente 24</option>
+	    <option value="Frente 37 Martin Caballero">Frente 37 "Martín Caballero"</option>
+	    <option value="Frente 33 Mariscal Antonio Jose de Sucre">Frente 33 "Mariscal Antonio José de Sucre"</option>
+	    <option value="Columna Móvil Bernardo Jaramillo">Columna Móvil "Bernardo Jaramillo"</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	} else if (bloque1 === 'Comandante Raúl Reyes') {
+            frente1.innerHTML = `
+	    <option value=""></option>             
+	    <option value="Frente Comandante Raúl Reyes">Frente "Comandante Raúl Reyes"</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	}  else if (bloque1 === 'Comando Conjunto De Oriente') {
+            frente1.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Frente 28">Frente 28</option>
+  	    <option value="Frente 10">Frente 10 "Martín Villa"</option>
+	    <option value="Frente Atanasio Girardot">Frente "Atanasio Girardot"</option>
+	    <option value="Frente 45">Frente 45</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	} else if (bloque1 === 'Bloque Central Isaías Pardo') {
+            frente1.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Frente Ismael Ruiz">Frente "Ismael Ruiz"</option>
+	    <option value="Frente/Cía Adán Izquierdo">Frente/Cía "Adán Izquierdo"</option>
+	    <option value="Frente 26 de Marzo">Frente "26 de Marzo"</option>
+	    <option value="Frente Hernando González Acosta">Frente "Hernando González Acosta"</option>
+	    <option value="Frente Jerónimo Galeano">Frente "Jerónimo Galeano"</option>
+	    <option value="Frente Héroes de Marquetalia">Frente "Héroes de Marquetalia"</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	} else if (bloque1 === 'Bloque Occidental Jacobo Arenas') {
+            frente1.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Frente Dagoberto Ramos">Frente "Dagoberto Ramos"</option>
+	    <option value="Frente Carlos Patino">Frente "Carlos Patiño"</option>
+	    <option value="Frente Jaime Martínez">Frente "Jaime Martínez"</option>
+	    <option value="Frente Franco Benavides">Frente "Franco Benavides"</option>
+	    <option value="Frente Rafael Aguilera">Frente 30 "Rafael Aguilera"</option>
+	    <option value="Frente Urias Rondon">Frente "Urías Rondón"</option>
+	    <option value="Frente Alan Rodriguez">Frente "Alan Rodríguez"</option>
+	    <option value="Frente Urbano Manuel Cepeda Vargas">Frente Urbano "Manuel Cepeda Vargas"</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	} else if (bloque1 === 'Bloque Amazonas Manuel Marulanda Vélez') {
+            frente1.innerHTML = `
+	    <option value=""></option> 
+  	    <option value="Frente 1 Armando Ríos">Frente 1 "Armando Ríos"</option>
+	    <option value="Frente Carolina Ramírez">Frente "Carolina Ramírez" (2)</option>
+	    <option value="Frente Héroes de Marquetalia">Frente "Héroes de Marquetalia"</option>
+	    <option value="Frente 44 Antonio Ricaurte">Frente 44 "Antonio Ricaurte"</option>
+	    <option value="Frente Amazonas Jhonier Arenas">Frente Amazonas "Jhonier Arenas"</option>
+	    <option value="Frente 39 Arcesio Niño">Frente 39 "Arcesio Niño"</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	} else if (bloque1 === 'Frente de guerra Oriental Manuel Vásquez Castaño') {
+            frente1.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Frente Domingo Laín Sanz">Frente Domingo Laín Sanz</option>
+	    <option value="Frente Adonay Ardila Pinilla">Frente Adonay Ardila Pinilla</option>
+	    <option value="Frente José David Suárez">Frente José David Suárez</option>
+	    <option value="Frente José Daniel Pérez Carrero">Frente José Daniel Pérez Carrero</option>
+	    <option value="Frente Efraín Pabón Pabón">Frente Efraín Pabón Pabón</option>
+	    <option value="Compañía Simacota">Compañía Simacota</option>
+	    <option value="Compañía Capitán Pomares">Compañía Capitán Pomares</option>
+	    <option value="Compañía Compañero Tomas">Compañía Compañero Tomas</option>
+	    <option value="Compañía Elasio Barón">Compañía Elasio Barón</option>
+	    <option value="Compañía Kiko">Compañía Kiko</option>
+	    <option value="Compañía Capitán Dumar">Compañía Capitán Dumar</option>
+	    <option value="Compañía Maisanta">Compañía Maisanta</option>
+	    <option value="Estructura Centro Sur">Estructura Centro Sur</option>
+	    <option value="Batallón Héroes y Mártires">Batallón Héroes y Mártires </option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	} else if (bloque1 === 'Frente de guerra Nororiental Manuel Pérez Martínez') {
+            frente1.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Frente Camilo Torres Restrepo">Frente Camilo Torres Restrepo</option>
+ 	    <option value="Frente Héctor">Frente Héctor</option>
+  	    <option value="Frente Carlos Armando Cacua Guerrero">Frente Carlos Armando Cacua Guerrero</option>
+	    <option value="Frente Luis Enrique León Guerra">Frente Luis Enrique León Guerra</option>
+	    <option value="Frente Juan Fernando Porras Martínez">Frente Juan Fernando Porras Martínez</option>
+	    <option value="Frente Roque">Frente Roque</option>
+	    <option value="Compañía Comandante Diego">Compañía Comandante Diego</option>
+	    <option value="Compañía Héroes del Catatumbo">Compañía Héroes del Catatumbo</option>
+	    <option value="Compañía Capitán Francisco Bossio">Compañía Capitán Francisco Bossio</option>
+	    <option value="Compañía 4 de septiembre">Compañía 4 de septiembre</option>
+	    <option value="Compañía Caribe">Compañía Caribe</option>
+	    <option value="Compañía Cinera">Compañía Cinera</option>
+	    <option value="Compañía Félix">Compañía Félix</option>
+	    <option value="Compañía Yulitza">Compañía Yulitza</option>
+	    <option value="Estado Mayor Regional">Estado Mayor Regional</option>
+	    <option value="Unidad Militar">Unidad Militar</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	} else if (bloque1 === 'Frente de guerra Occidental Omar Gómez') {
+            frente1.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Frente Camilo Torres Restrepo">Frente Camilo Torres Restrepo</option>
+ 	    <option value="Frente Héctor">Frente Héctor</option>
+  	    <option value="Frente Carlos Armando Cacua Guerrero">Frente Carlos Armando Cacua Guerrero</option>
+	    <option value="Frente Luis Enrique León Guerra">Frente Luis Enrique León Guerra</option>
+	    <option value="Frente Juan Fernando Porras Martínez">Frente Juan Fernando Porras Martínez</option>
+	    <option value="Frente Roque">Frente Roque</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	}  else if (bloque1 === 'Frente de guerra Urbano Nacional Camilo Torres Restrepo') {
+            frente1.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Frente Urbano Luis Fernando Giraldo Builes">Frente Urbano Luis Fernando Giraldo Builes</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	} else if (bloque1 === 'Frente de guerra Jesús Darío Ramírez Castro') {
+            frente1.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Frente Edgar Amílcar Grimaldo Barón">Frente Edgar Amílcar Grimaldo Barón</option>
+	    <option value="Frente José Antonio Galán">Frente José Antonio Galán</option>
+	    <option value="Frente Capitán Mauricio">Frente Capitán Mauricio</option>
+	    <option value="Frente Héroes y Mártires de Anorí">Frente Héroes y Mártires de Anorí</option>
+	    <option value="Frente Compañero Tomás">Frente Compañero Tomás</option>
+	    <option value="Frente Resistencia Guamocó">Frente Resistencia Guamocó</option>
+	    <option value="Frente José Solano Sepúlveda">Frente José Solano Sepúlveda</option>
+	    <option value="Frente Guillermo Ariza">Frente Guillermo Ariza</option>
+	    <option value="Frente Héroes y Mártires de Santa Rosa">Frente Héroes y Mártires de Santa Rosa</option>
+	    <option value="Frente Alfredo Gómez Quiñonez">Frente Alfredo Gómez Quiñonez</option>
+	    <option value="Compañía Tito Marín">Compañía Tito Marín</option>
+	    <option value="Compañía Simón Bolívar">Compañía Simón Bolívar</option>
+	    <option value="Compañía Héroes de Tarazá">Compañía Héroes de Tarazá</option>
+	    <option value="Compañía Móvil Anorí">Compañía Móvil Anorí</option>
+	    <option value="Célula Urbana Turpiales (Medellín)">Célula Urbana Turpiales (Medellín)</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	}  else if (bloque1 === 'Frente de guerra Sur Occidental José Manuel Martínez Quiroz') {
+            frente1.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Frente José María Becerra">Frente José María Becerra</option>
+	    <option value="Frente Manuel Vásquez Castaño">Frente Manuel Vásquez Castaño</option>
+	    <option value="Frente Comuneros del Sur">Frente Comuneros del Sur</option>
+	    <option value="Compañía Jaime Toño Obando">Compañía Jaime Toño Obando</option>
+	    <option value="Compañía José Luis Cabrera Rúales">Compañía José Luis Cabrera Rúales</option>
+	    <option value="Compañía Elder Santos">Compañía Elder Santos</option>
+	    <option value="Compañía Milton Hernández Ortiz">Compañía Milton Hernández Ortiz</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	}  else if (bloque1 === 'Por establecer') {
+            frente1.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Por establecer">Por Establecer</option>
+		`;
+	}  else if (bloque1 === 'Otro Bloque/Estructura') {
+            frente1.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	}
+}
+
+function mostrarOtroFrente() {
+    const frente1 = document.getElementById('frente1').value;
+    const otroFrenteInput = document.getElementById('otroFrenteInput');
+
+    if (frente1 === 'Otro Frente/Subestructura') {
+        otroFrenteInput.style.display = 'block';
+    } else {
+        otroFrenteInput.style.display = 'none';
+    }
+}
+
+
+
+
+function actualizarBloque2() {
+        const grupoIlegal2 = document.getElementById('grupoIlegal2').value;
+        const bloque2 = document.getElementById('bloque2');
+const otroBloqueInput2 = document.getElementById('otroBloqueInput2');
+
+        bloque2.innerHTML = ''; // Limpiar las opciones anteriores
+otroBloqueInput2.style.display = 'none'; // Ocultar el campo de texto
+
+	if (grupoIlegal2 === 'EMC') {
+            bloque2.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Comando Conjunto De Oriente">Comando Conjunto De Oriente</option>
+	    <option value="Bloque Central Isaías Pardo">Bloque Central Isaías Pardo</option>
+	    <option value="Bloque Occidental Jacobo Arenas">Bloque Occidental Jacobo Arenas</option>
+	    <option value="Bloque Amazonas Manuel Marulanda Vélez">Bloque Amazonas Manuel Marulanda Vélez</option>
+            `;
+        }  else if (grupoIlegal2 === 'EMB') {
+            bloque2.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Comandante Jorge Suárez Briceño">Bloque "Comandante Jorge Suárez Briceño"</option>
+	    <option value="Comandante Gentil Duarte">Bloque Magdalena Medio "Comandante Gentil Duarte"</option>
+	    <option value="Comandante Raúl Reyes">Frente "Comandante Raúl Reyes"</option>
+            `;
+        }  else if (grupoIlegal2 === 'ELN') {
+            bloque2.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Frente de guerra Oriental Manuel Vásquez Castaño">Frente de guerra Oriental Manuel Vásquez Castaño</option>
+	    <option value="Frente de guerra Nororiental Manuel Pérez Martínez">Frente de guerra Nororiental Manuel Pérez Martínez</option>
+	    <option value="Frente de guerra Occidental Omar Gómez">Frente de guerra Occidental Omar Gómez</option>
+	    <option value="Frente de guerra Urbano Nacional Camilo Torres Restrepo">Frente de guerra Urbano Nacional Camilo Torres Restrepo</option>
+ 	    <option value="Frente de guerra Jesús Darío Ramírez Castro">Frente de guerra Jesús Darío Ramírez Castro</option>
+ 	    <option value="Frente de guerra Sur Occidental José Manuel Martínez Quiroz">Frente de guerra Sur Occidental José Manuel Martínez Quiroz</option>
+            `;
+        }   else if (grupoIlegal2 === 'CS') {
+            bloque2.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Sur Occidental">Sur Occidental</option>
+	    `;
+        }   else if (grupoIlegal2 === '2M') {
+            bloque2.innerHTML = `
+	    <option value=""></option>    
+	    <option value="Otro Bloque/Estructura">Otro Bloque/Estructura</option>            
+	    `;
+        }   else if (grupoIlegal2 === 'CNEB') {
+            bloque2.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Otro Bloque/Estructura">Otro Bloque/Estructura</option>
+	    `;
+        }  else if (grupoIlegal2 === 'AGC') {
+            bloque2.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Otro Bloque/Estructura">Otro Bloque/Estructura</option>
+	    `;
+        }  else if (grupoIlegal2 === 'ACSN') {
+            bloque2.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Otro Bloque/Estructura">Otro Bloque/Estructura</option>
+	    `;
+        }  else if (grupoIlegal2 === 'GDCO') {
+            bloque2.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Otro Bloque/Estructura">Otro Bloque/Estructura</option>
+	    `;
+        }  else if (grupoIlegal2 === 'GDO') {
+            bloque2.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Otro Bloque/Estructura">Otro Bloque/Estructura</option>
+	    `;
+        }  else if (grupoIlegal2 === 'Por establecer') {
+            bloque2.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Por establecer">Por Establecer</option>               
+	    `;
+        } 
+}
+	
+	function mostrarOtroBloque2() {
+    const bloque2 = document.getElementById('bloque2').value;
+    const otroBloqueInput2 = document.getElementById('otroBloqueInput2');
+
+    if (bloque2 === 'Otro Bloque/Estructura') {
+        otroBloqueInput2.style.display = 'block';
+    } else {
+        otroBloqueInput2.style.display = 'none';
+    }
+}
+
+
+
+
+// actualizar Frente 
+
+	function actualizarFrente2() {
+        const bloque2 = document.getElementById('bloque2').value;
+        const frente2 = document.getElementById('frente2');
+const otroFrenteInput2 = document.getElementById('otroFrenteInput2');
+
+        frente2.innerHTML = ''; // Limpiar las opciones anteriores
+otroFrenteInput.style.display = 'none'; // Ocultar el campo de texto
+
+
+	if (bloque2 === 'Comandante Jorge Suárez Briceño') {
+            frente2.innerHTML = `
+	    <option value=""></option>    
+            <option value="Frente Gaitán Gutiérrez">Frente "Gaitán Gutiérrez"</option>
+	    <option value="Frente Marco Aurelio Buendía">Frente "Marco Aurelio Buendía"</option>
+	    <option value="Frente Evert Castro">Frente "Evert Castro"</option>
+	    <option value="Frente Arturo Ruíz">Frente "Arturo Ruíz"</option>
+	    <option value="Frente Iván Díaz">Frente "Iván Díaz"</option>
+	    <option value="Frente Rodrigo Cadete">Frente "Rodrigo Cadete"</option>
+	    <option value="Frente Darío Gutiérrez">Frente "Darío Gutiérrez"</option>
+	    <option value="Frente Jhon Linares">Frente "Jhon Linares"</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+            `;
+	}   else if (bloque2 === 'Comandante Gentil Duarte') {
+            frente2.innerHTML = `
+	    <option value=""></option>             
+	    <option value="Frente IV">Frente IV</option>
+	    <option value="Frente 18">Frente 18</option>
+	    <option value="Frente 36">Frente 36</option>
+	    <option value="Frente 24">Frente 24</option>
+	    <option value="Frente 37 Martin Caballero">Frente 37 "Martín Caballero"</option>
+	    <option value="Frente 33 Mariscal Antonio Jose de Sucre">Frente 33 "Mariscal Antonio José de Sucre"</option>
+	    <option value="Columna Móvil Bernardo Jaramillo">Columna Móvil "Bernardo Jaramillo"</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	} else if (bloque2 === 'Comandante Raúl Reyes') {
+            frente2.innerHTML = `
+	    <option value=""></option>             
+	    <option value="Frente Comandante Raúl Reyes">Frente "Comandante Raúl Reyes"</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	}  else if (bloque2 === 'Comando Conjunto De Oriente') {
+            frente2.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Frente 28">Frente 28</option>
+  	    <option value="Frente 10">Frente 10 "Martín Villa"</option>
+	    <option value="Frente Atanasio Girardot">Frente "Atanasio Girardot"</option>
+	    <option value="Frente 45">Frente 45</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	} else if (bloque2 === 'Bloque Central Isaías Pardo') {
+            frente2.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Frente Ismael Ruiz">Frente "Ismael Ruiz"</option>
+	    <option value="Frente/Cía Adán Izquierdo">Frente/Cía "Adán Izquierdo"</option>
+	    <option value="Frente 26 de Marzo">Frente "26 de Marzo"</option>
+	    <option value="Frente Hernando González Acosta">Frente "Hernando González Acosta"</option>
+	    <option value="Frente Jerónimo Galeano">Frente "Jerónimo Galeano"</option>
+	    <option value="Frente Héroes de Marquetalia">Frente "Héroes de Marquetalia"</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	} else if (bloque2 === 'Bloque Occidental Jacobo Arenas') {
+            frente2.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Frente Dagoberto Ramos">Frente "Dagoberto Ramos"</option>
+	    <option value="Frente Carlos Patino">Frente "Carlos Patiño"</option>
+	    <option value="Frente Jaime Martínez">Frente "Jaime Martínez"</option>
+	    <option value="Frente Franco Benavides">Frente "Franco Benavides"</option>
+	    <option value="Frente Rafael Aguilera">Frente 30 "Rafael Aguilera"</option>
+	    <option value="Frente Urias Rondon">Frente "Urías Rondón"</option>
+	    <option value="Frente Alan Rodriguez">Frente "Alan Rodríguez"</option>
+	    <option value="Frente Urbano Manuel Cepeda Vargas">Frente Urbano "Manuel Cepeda Vargas"</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	} else if (bloque2 === 'Bloque Amazonas Manuel Marulanda Vélez') {
+            frente2.innerHTML = `
+	    <option value=""></option> 
+  	    <option value="Frente 1 Armando Ríos">Frente 1 "Armando Ríos"</option>
+	    <option value="Frente Carolina Ramírez">Frente "Carolina Ramírez" (2)</option>
+	    <option value="Frente Héroes de Marquetalia">Frente "Héroes de Marquetalia"</option>
+	    <option value="Frente 44 Antonio Ricaurte">Frente 44 "Antonio Ricaurte"</option>
+	    <option value="Frente Amazonas Jhonier Arenas">Frente Amazonas "Jhonier Arenas"</option>
+	    <option value="Frente 39 Arcesio Niño">Frente 39 "Arcesio Niño"</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	} else if (bloque2 === 'Frente de guerra Oriental Manuel Vásquez Castaño') {
+            frente2.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Frente Domingo Laín Sanz">Frente Domingo Laín Sanz</option>
+	    <option value="Frente Adonay Ardila Pinilla">Frente Adonay Ardila Pinilla</option>
+	    <option value="Frente José David Suárez">Frente José David Suárez</option>
+	    <option value="Frente José Daniel Pérez Carrero">Frente José Daniel Pérez Carrero</option>
+	    <option value="Frente Efraín Pabón Pabón">Frente Efraín Pabón Pabón</option>
+	    <option value="Compañía Simacota">Compañía Simacota</option>
+	    <option value="Compañía Capitán Pomares">Compañía Capitán Pomares</option>
+	    <option value="Compañía Compañero Tomas">Compañía Compañero Tomas</option>
+	    <option value="Compañía Elasio Barón">Compañía Elasio Barón</option>
+	    <option value="Compañía Kiko">Compañía Kiko</option>
+	    <option value="Compañía Capitán Dumar">Compañía Capitán Dumar</option>
+	    <option value="Compañía Maisanta">Compañía Maisanta</option>
+	    <option value="Estructura Centro Sur">Estructura Centro Sur</option>
+	    <option value="Batallón Héroes y Mártires">Batallón Héroes y Mártires </option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	} else if (bloque2 === 'Frente de guerra Nororiental Manuel Pérez Martínez') {
+            frente2.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Frente Camilo Torres Restrepo">Frente Camilo Torres Restrepo</option>
+ 	    <option value="Frente Héctor">Frente Héctor</option>
+  	    <option value="Frente Carlos Armando Cacua Guerrero">Frente Carlos Armando Cacua Guerrero</option>
+	    <option value="Frente Luis Enrique León Guerra">Frente Luis Enrique León Guerra</option>
+	    <option value="Frente Juan Fernando Porras Martínez">Frente Juan Fernando Porras Martínez</option>
+	    <option value="Frente Roque">Frente Roque</option>
+	    <option value="Compañía Comandante Diego">Compañía Comandante Diego</option>
+	    <option value="Compañía Héroes del Catatumbo">Compañía Héroes del Catatumbo</option>
+	    <option value="Compañía Capitán Francisco Bossio">Compañía Capitán Francisco Bossio</option>
+	    <option value="Compañía 4 de septiembre">Compañía 4 de septiembre</option>
+	    <option value="Compañía Caribe">Compañía Caribe</option>
+	    <option value="Compañía Cinera">Compañía Cinera</option>
+	    <option value="Compañía Félix">Compañía Félix</option>
+	    <option value="Compañía Yulitza">Compañía Yulitza</option>
+	    <option value="Estado Mayor Regional">Estado Mayor Regional</option>
+	    <option value="Unidad Militar">Unidad Militar</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	} else if (bloque2 === 'Frente de guerra Occidental Omar Gómez') {
+            frente2.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Frente Camilo Torres Restrepo">Frente Camilo Torres Restrepo</option>
+ 	    <option value="Frente Héctor">Frente Héctor</option>
+  	    <option value="Frente Carlos Armando Cacua Guerrero">Frente Carlos Armando Cacua Guerrero</option>
+	    <option value="Frente Luis Enrique León Guerra">Frente Luis Enrique León Guerra</option>
+	    <option value="Frente Juan Fernando Porras Martínez">Frente Juan Fernando Porras Martínez</option>
+	    <option value="Frente Roque">Frente Roque</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	}  else if (bloque2 === 'Frente de guerra Urbano Nacional Camilo Torres Restrepo') {
+            frente2.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Frente Urbano Luis Fernando Giraldo Builes">Frente Urbano Luis Fernando Giraldo Builes</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	} else if (bloque2 === 'Frente de guerra Jesús Darío Ramírez Castro') {
+            frente2.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Frente Edgar Amílcar Grimaldo Barón">Frente Edgar Amílcar Grimaldo Barón</option>
+	    <option value="Frente José Antonio Galán">Frente José Antonio Galán</option>
+	    <option value="Frente Capitán Mauricio">Frente Capitán Mauricio</option>
+	    <option value="Frente Héroes y Mártires de Anorí">Frente Héroes y Mártires de Anorí</option>
+	    <option value="Frente Compañero Tomás">Frente Compañero Tomás</option>
+	    <option value="Frente Resistencia Guamocó">Frente Resistencia Guamocó</option>
+	    <option value="Frente José Solano Sepúlveda">Frente José Solano Sepúlveda</option>
+	    <option value="Frente Guillermo Ariza">Frente Guillermo Ariza</option>
+	    <option value="Frente Héroes y Mártires de Santa Rosa">Frente Héroes y Mártires de Santa Rosa</option>
+	    <option value="Frente Alfredo Gómez Quiñonez">Frente Alfredo Gómez Quiñonez</option>
+	    <option value="Compañía Tito Marín">Compañía Tito Marín</option>
+	    <option value="Compañía Simón Bolívar">Compañía Simón Bolívar</option>
+	    <option value="Compañía Héroes de Tarazá">Compañía Héroes de Tarazá</option>
+	    <option value="Compañía Móvil Anorí">Compañía Móvil Anorí</option>
+	    <option value="Célula Urbana Turpiales (Medellín)">Célula Urbana Turpiales (Medellín)</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	}  else if (bloque2 === 'Frente de guerra Sur Occidental José Manuel Martínez Quiroz') {
+            frente2.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Frente José María Becerra">Frente José María Becerra</option>
+	    <option value="Frente Manuel Vásquez Castaño">Frente Manuel Vásquez Castaño</option>
+	    <option value="Frente Comuneros del Sur">Frente Comuneros del Sur</option>
+	    <option value="Compañía Jaime Toño Obando">Compañía Jaime Toño Obando</option>
+	    <option value="Compañía José Luis Cabrera Rúales">Compañía José Luis Cabrera Rúales</option>
+	    <option value="Compañía Elder Santos">Compañía Elder Santos</option>
+	    <option value="Compañía Milton Hernández Ortiz">Compañía Milton Hernández Ortiz</option>
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	}  else if (bloque2 === 'Por establecer') {
+            frente2.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Por establecer">Por Establecer</option>
+		`;
+	}  else if (bloque2 === 'Otro Bloque/Estructura') {
+            frente2.innerHTML = `
+	    <option value=""></option> 
+	    <option value="Otro Frente/Subestructura">Otro Frente/Subestructura</option>
+		`;
+	}
+}
+
+
+function mostrarOtroFrente2() {
+    const frente2 = document.getElementById('frente2').value;
+    const otroFrenteInput2 = document.getElementById('otroFrenteInput2');
+
+    if (frente2 === 'Otro Frente/Subestructura') {
+        otroFrenteInput2.style.display = 'block';
+    } else {
+        otroFrenteInput2.style.display = 'none';
+    }
+}
+
+
+
+// Actualiza FUERZA AFECTADA
+    
+	function actualizarSector() {
+        const sectorAfectado = document.getElementById('sectorAfectado').value;
+        const fuerzaAfectada= document.getElementById('fuerzaAfectada');
+
+        fuerzaAfectada.innerHTML = ''; // Limpiar las opciones anteriores
+
+	if (sectorAfectado === 'Población civil') {
+            fuerzaAfectada.innerHTML = `
+	    <option value=""></option>                
+	    <option value="Población Civil">Población Civil</option>
+	    `;
+        } else if (sectorAfectado === 'Fuerza publica') {
+            fuerzaAfectada.innerHTML = `
+	    	<option value=""></option> 
+		<option value="Policía Nacional">Policía Nacional</option>
+	        <option value="Ejército nacional">Ejército nacional</option>
+	        <option value="Fuerza Aérea">Fuerza Aérea</option>
+ 	        <option value="Armada Nacional">Armada Nacional</option>
+	        <option value="INPEC">INPEC</option>
+		`;
+	} else if (sectorAfectado === 'Sector estratégico') {
+            fuerzaAfectada.innerHTML = `
+	    	<option value=""></option> 
+		<option value="Sector petrolero">Sector petrolero </option>
+	        <option value="Sector Comercio">Sector Comercio</option>
+	        <option value="Sector Estatal (alcaldias, gibernaciones, etc..)">Sector Estatal (alcaldias, gibernaciones, etc..)</option>
+ 	        <option value="Sector Transporte Terrestre">Sector Transporte Terrestre</option>
+	        <option value="Sector Aereo">Sector Aereo</option>
+	        <option value="Malla vial e infraestructura">Malla vial e infraestructura</option>
+	        <option value="Puertos">Puertos</option>
+	        <option value="Otros Sectores">Otros Sectores</option>
+		`;
+	} else if (sectorAfectado === 'Población civil y fuerza pública') {
+            fuerzaAfectada.innerHTML = `
+	    	<option value=""></option> 
+		<option value="Policía Nacional y población civil">Policía Nacional y población civil </option>
+	        <option value="Ejército nacional y población civil">Ejército nacional y población civil </option>
+	        <option value="Fuerza Aérea y población civil">Fuerza Aérea y población civil </option>
+ 	        <option value="Armada Nacional y población civil">Armada Nacional y población civil </option>
+	        <option value="INPEC y población civil">INPEC y población civil </option>
+		`;
+	}
+}
+
+ </script>  
+
+
+	
+<script>
+    document.getElementById('operativoForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const data = {
+	Nro: document.getElementById('Nro').value,
+	Gepol: document.getElementById('Gepol').value,
+	fechaActual: document.getElementById('fechaActual').value,
+	fechaIncidente: document.getElementById('fechaIncidente').value,
+	horaIncidente: document.getElementById('horaIncidente').value,
+	región: document.getElementById('region').value,
+	unidad: document.getElementById('unidad').value,
+	departamento: document.getElementById('departamento').value,
+	municipio: document.getElementById('municipio').value,
+	vereda: document.getElementById('vereda').value,
+	zona: document.getElementById('zona').value,
+	tipoAccion: document.getElementById('tipoAccion').value,
+	Accion: document.getElementById('Accion').value,
+	subAccion: document.getElementById('subAccion').value,
+	victima: document.getElementById('victima').value,
+	modalidad: document.getElementById('modalidad').value,
+	hechos: document.getElementById('hechos').value,
+	grupoIlegal1: document.getElementById('grupoIlegal1').value,
+	bloque1: document.getElementById('bloque1').value,
+	otroBloqueInput: document.getElementById('otroBloqueInput').value,
+	frente1: document.getElementById('frente1').value,
+	otroFrenteInput: document.getElementById('otroFrenteInput').value,
+	grupoIlegal2: document.getElementById('grupoIlegal2').value,
+	bloque2: document.getElementById('bloque2').value,
+	otroBloqueInput2: document.getElementById('otroBloqueInput2').value,
+	frente2: document.getElementById('frente2').value,
+	otroFrenteInput2: document.getElementById('otroFrenteInput2').value,
+	sectorAfectado: document.getElementById('sectorAfectado').value,
+	fuerzaAfectada: document.getElementById('fuerzaAfectada').value,
+	homi_ponal: document.getElementById('homi_ponal').value,
+	homi_ffmm: document.getElementById('homi_ffmm').value,
+	homi_lider: document.getElementById('homi_lider').value,
+	homi_ppr: document.getElementById('homi_ppr').value,
+	homi_militantes: document.getElementById('homi_militantes').value,
+	homi_nna: document.getElementById('homi_nna').value,
+	homi_civil: document.getElementById('homi_civil').value,
+	lesi_ponal: document.getElementById('lesi_ponal').value,
+	lesi_ffmm: document.getElementById('lesi_ffmm').value,
+	lesi_lider: document.getElementById('lesi_lider').value,
+	lesi_ppr: document.getElementById('lesi_ppr').value,
+	lesi_militantes: document.getElementById('lesi_militantes').value,
+	lesi_nna: document.getElementById('lesi_nna').value,
+	lesi_civil: document.getElementById('lesi_civil').value,
+	sec_ponal: document.getElementById('sec_ponal').value,
+	sec_ffmm: document.getElementById('sec_ffmm').value,
+	sec_lider: document.getElementById('sec_lider').value,
+	sec_ppr: document.getElementById('sec_ppr').value,
+	sec_militantes: document.getElementById('sec_militantes').value,
+	sec_nna: document.getElementById('sec_nna').value,
+	sec_civil: document.getElementById('sec_civil').value,
+	Capt_ppr: document.getElementById('Capt_ppr').value,
+	Capt_militantes: document.getElementById('Capt_militantes').value,
+	Capt_civil: document.getElementById('Capt_civil').value,
+	Aprehen_militantes: document.getElementById('Aprehen_militantes').value
+        };
+
+        try {
+            const response = await fetch('https://prod-63.westus.logic.azure.com:443/workflows/610233f46a6a4a0bb55f77e0af07e518/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ZFbD1B8tb6Gd4lXmQ5IMzfwEV4iLtlZFC2ay9h9SOq0', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                alert('Formulario enviado correctamente.');
+                document.getElementById('operativoForm').reset(); // Limpiar el formulario
+            } else {
+                alert('Error al enviar el formulario.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Hubo un error al enviar el formulario.');
+        }
+    });
+</script>
+
+    
+
+</body>
+</html>
