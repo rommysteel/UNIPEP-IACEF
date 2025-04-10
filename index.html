@@ -2828,15 +2828,12 @@ function actualizarDepartamentos() {
 				<option value=""></option> 
 				<option value="Contra la fuerza pública">Contra Fuerza Pública</option>
 		`;
-	} if (['Extorsión', 'Amenazaz'].includes(subAccion))
-	 { victima.innerHTML = 
+	} if (['Extorsiones', 'Amenazaz'].includes(subAccion))
+	 { victima.innerHTML = `
 		<option value=""></option> 
 		<option value="Directa">Directa</option>
 		<option value="Indirecta">Indirecta</option>
-
-
-
-    
+		 
 		`;
 	} else if (subAccion  === 'Captura') {
             victima.innerHTML = `
