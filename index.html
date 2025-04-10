@@ -2624,6 +2624,7 @@ function actualizarDepartamentos() {
             <option value="Liberacion de secuestrados">Liberación de Secuestrados</option>
             <option value="Reclutamiento Forzado">Reclutamiento Forzado</option>
             <option value="Proselitismo">Proselitismo</option>
+	    <option value="Amenazas">Amenazas</option>
 		`;
 	} else if (Accion === 'Contra el patrimonio económico') {
             subAccion.innerHTML = `
@@ -2827,11 +2828,15 @@ function actualizarDepartamentos() {
 				<option value=""></option> 
 				<option value="Contra la fuerza pública">Contra Fuerza Pública</option>
 		`;
-	} else if (subAccion  === 'Extorsiones') {
-            victima.innerHTML = `
-				<option value=""></option> 
-				<option value="Directa">Directa</option>
-				<option value="Indirecta">Indirecta</option>
+	} if (['Extorsión', 'Amenazaz'].includes(subAccion))
+	 { victima.innerHTML = 
+		<option value=""></option> 
+		<option value="Directa">Directa</option>
+		<option value="Indirecta">Indirecta</option>
+
+
+
+    
 		`;
 	} else if (subAccion  === 'Captura') {
             victima.innerHTML = `
